@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+$button_width: 230px;
+$button_height: 55px;
+$button_borderRad: 15px;
+
+.backimage{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}

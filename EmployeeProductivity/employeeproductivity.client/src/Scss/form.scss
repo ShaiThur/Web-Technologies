@@ -1,0 +1,107 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+$button_width: 230px;
+$button_height: 55px;
+$button_borderRad: 15px;
+
+h1{
+    font-size: 70px;
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+input{
+    font-size: 20px;
+    width: 400px;
+    border-radius: 10px;
+    height: 55px;
+    font-weight: lighter;
+    text-indent: 15px;
+    background-color: #f7f7f7;
+    margin-top: 20px;
+    border: 1.5px solid #7d7f7d;
+}
+
+input::placeholder{
+    margin-left: 20px;
+    color: #808080;
+}
+
+.remindPass{
+    width: 400px;
+    display: flex;
+    margin-top: 8px;
+}
+
+a{
+    align-self: flex-start;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+.signInButton{
+    width: $button_width + 10px;
+    height: $button_height + 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $button_borderRad;
+    background-color: #8bcbf9;
+    margin-top: 50px;
+}
+
+.signInButton button{
+    width: $button_width;
+    height: $button_height;
+    border-radius: $button_borderRad;
+    background-color: #70b1ff;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+.signUp{
+    width: $button_width + 10px;
+    display: flex;
+    margin-top: 10px;
+}
+
+.backimage{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}
+
+.mainView{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 650px;
+    border-radius: 70px;
+    background-color: white;
+}
+
+.buttonSwitch{
+    cursor: pointer;
+    align-self: flex-start;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: lighter;
+    background: none;
+    border: none;
+    margin-top: 5px;
+}
+
+.forButtonSwitch{
+    width: $button_width + 10px;
+}

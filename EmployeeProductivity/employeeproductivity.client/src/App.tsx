@@ -1,56 +1,22 @@
-import { useEffect, useState } from 'react';
 import './App.css';
-
-interface Forecast {
-    date: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
-}
-
+import "../src/Css/mainStyles.css"
+import Form from './Components/Form';
+import { useState } from 'react';
+import WorkZone from './Components/WorkZone'
+import backgrImageForm from '../src/images/backgrimage.jpg'
+import backgrImageMain from '../src/images/60de144771d20cd5290781e5_Very_Black_screen.jpeg'
 function App() {
-    const [forecasts, setForecasts] = useState<Forecast[]>();
-
-    useEffect(() => {
-        populateWeatherData();
-    }, []);
-
-    const contents = forecasts === undefined
-        ? <p><h1>your mom gey</h1></p>
-        : <table className="table table-striped" aria-labelledby="tabelLabel">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
+    const [showWorkZone, setShowWorkZone] = useState(false)
 
     return (
         <div>
-            <h1 id="tabelLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
+            <div className="backimage" style={ showWorkZone ? {backgroundImage: `url(${backgrImageMain})`} : {backgroundImage: `url(${backgrImageForm})`}}>
+                <div style={{width:`${100}%`, height:`${100}%`, display:'flex', justifyContent:'center', alignItems:'center'}}>
+                    {showWorkZone ? <WorkZone/> : <Form setShowWorkZone={setShowWorkZone}/>}
+                </div>
+            </div>
         </div>
     );
-
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        const data = await response.json();
-        setForecasts(data);
-    }
 }
 
 export default App;
