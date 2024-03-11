@@ -1,17 +1,97 @@
+$backgColor: rgba(255, 255, 255, 0.5);
+$borderColor: rgba(255, 255, 255, 0.8);
+$activeColor: rgba(66,170,255);
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../font/SegoeUIVF.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    font-family: 'MyCustomFont';
+}
+
+
 .mainViewWork{
     margin-top: 10vh;
-    width: 1550px;
+    width: 85vw;
     height: 100%;
     border-radius: 2vw;
-    background-color: white;
 }
 
 .workzone{
-    width: 83vw;
+    width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: $backgColor;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.workzone .header{
+    height: 22vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: -100px;
+    background-color: white;
+}
+
+.workzone .header .headerContents{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 10px;
+    margin-top: 85px;
+    font-size: 22px;
+}
+
+.workzone .header .exitIcon{
+    margin-top: 3px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+.workzone #tasks{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 2px;
+    height: 55px;
+}
+
+
+.workzone .header .tabs{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 14px;
+}
+
+.workzone .header .tabs .tabsButtons{
+    border: 2.5px solid #bbbbbb;
+    font-size: 22px;
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.workzone .header .tabs #activeButton{
+    border-color: $activeColor;
+}
+
+
+.workzone .body{
+    height: 85vh;
+    width: 85vw;
 }

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "../Css/form.css"
 import SignUp from './SignUp';
 
-const Form = ( { setShowWorkZone} ) => {
+const Form = ( { setShowWorkZone} : {setShowWorkZone:() => void} ) => {
     const [showSignUpForm, setShowSignUpForm] = useState(false);
     const myHeight = showSignUpForm ? 720 : 550;
     const myTop = showSignUpForm ? 140 : 210;

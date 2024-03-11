@@ -4,7 +4,7 @@ import Form from './Components/Form';
 import { useState } from 'react';
 import WorkZone from './Components/WorkZone'
 import backgrImageForm from '../src/images/backgrimage.jpg'
-import backgrImageMain from '../src/images/60de144771d20cd5290781e5_Very_Black_screen.jpeg'
+import backgrImageMain from '../src/images/workzone_backgrimage.jpg'
 function App() {
     const [showWorkZone, setShowWorkZone] = useState(false)
 

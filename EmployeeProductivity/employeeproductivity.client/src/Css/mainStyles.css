@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('../font/SegoeUIVF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
   overflow: hidden;
+  font-family: 'MyCustomFont';
 }
 
 .backimage {

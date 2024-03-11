@@ -1,4 +1,4 @@
-const SignIn = ( {setShowSignUpForm, setShowWorkZone} ) => {
+const SignIn = ( {setShowSignUpForm, setShowWorkZone} : {setShowSignUpForm: (show: boolean) => void, setShowWorkZone:(show : boolean)=>void} ) => {
 
     return(
         <div className='container'>
