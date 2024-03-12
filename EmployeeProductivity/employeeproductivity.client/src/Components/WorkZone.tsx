@@ -2,10 +2,19 @@ import { faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "../Css/workZone.css"
 import {useState} from "react";
+import Post from "./Post";
+import Tasks from "./Tasks";
+import OffersTask from "./OffersTask";
+import Statistic from "./Statistic";
 
 const WorkZone = () => {
     const [nameLabel, setNameLabel] = useState('Задания');
     const [activeButton, setActiveButton] = useState('button1');
+    const [posts, setPosts] = useState([
+        {title: 'Купить пиво', deadLine: '25/04/2024', countStars:2},
+        {title: 'Купить селёдочки', deadLine: '25/04/2024', countStars:3},
+        {title: 'Сходить нахуй', deadLine: '12/03/2024', countStars:3}
+    ])
 
     const ChangePage = (nameLabel : string, buttonName : string) => {
         setActiveButton(buttonName);
@@ -41,8 +50,10 @@ const WorkZone = () => {
                         </button>
                     </div>
                 </div>
+
+
                 <div className="body">
-                    <button>Жми</button>
+                    {nameLabel == 'Задания' ? <Tasks posts={posts}/> : nameLabel == 'Предложенные задания' ? <OffersTask/> : <Statistic/>}
                 </div>
             </div>
         </div>
