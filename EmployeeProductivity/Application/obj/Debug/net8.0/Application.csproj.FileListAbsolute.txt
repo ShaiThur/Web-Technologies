@@ -1,0 +1,15 @@
+D:\cpp\EployeesApp\Application\bin\Debug\net8.0\Application.deps.json
+D:\cpp\EployeesApp\Application\bin\Debug\net8.0\Application.dll
+D:\cpp\EployeesApp\Application\bin\Debug\net8.0\Application.pdb
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\Application.dll
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\refint\Application.dll
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\Application.pdb
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\ref\Application.dll
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+D:\cpp\EployeesApp\Application\bin\Debug\net8.0\Domain.dll
+D:\cpp\EployeesApp\Application\bin\Debug\net8.0\Domain.pdb
+D:\cpp\EployeesApp\Application\obj\Debug\net8.0\Application.csproj.CopyComplete
