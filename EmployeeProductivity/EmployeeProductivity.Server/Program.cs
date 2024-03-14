@@ -1,4 +1,3 @@
-
 namespace EmployeeProductivity.Server
 {
     public class Program
@@ -7,12 +6,13 @@ namespace EmployeeProductivity.Server
         {
             var builder = WebApplication.CreateBuilder(args);
 
+           builder.Services.AddApplicationServices();
+            builder.Services.AddInfrastructureServices(builder.Configuration);
             // Add services to the container.
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
             var app = builder.Build();
 
             app.UseDefaultFiles();
