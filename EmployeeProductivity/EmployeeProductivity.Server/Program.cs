@@ -7,6 +7,10 @@ namespace EmployeeProductivity.Server
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddResponseCompression(options =>
+            {
+                options.EnableForHttps = true;
+            });
 
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -28,6 +32,7 @@ namespace EmployeeProductivity.Server
             builder.Services.AddExceptionHandler<CustomExceptionsHandlerMiddleware>();
 
             var app = builder.Build();
+            app.UseResponseCompression();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
