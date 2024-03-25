@@ -4,12 +4,17 @@ import App from './App.tsx'
 import './index.css'
 import {RouterProvider, createBrowserRouter } from 'react-router-dom';
 import ErrorPage from './Components/ErrorPage.tsx';
+import WorkZone from "./Components/WorkZone";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "*",
     element: <App />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage/>
+  },
+  {
+    path: "/workzone/:id",
+    element: <WorkZone />
   },
 ]);
 

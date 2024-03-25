@@ -6,19 +6,25 @@ import Post from "./Post";
 import Tasks from "./Tasks";
 import OffersTask from "./OffersTask";
 import Statistic from "./Statistic";
+import {Link, useNavigate, useParams} from "react-router-dom";
 
 const WorkZone = () => {
     const [nameLabel, setNameLabel] = useState('Задания');
     const [activeButton, setActiveButton] = useState('button1');
     const [posts, setPosts] = useState([
-        {title: 'Купить пиво', deadLine: '25/04/2024', countStars:2},
-        {title: 'Купить селёдочки', deadLine: '25/04/2024', countStars:3},
-        {title: 'Сходить нахуй', deadLine: '12/03/2024', countStars:3}
     ])
+
+    const navigate = useNavigate();
+    const id = useParams();
+    console.log(id.id)
 
     const ChangePage = (nameLabel : string, buttonName : string) => {
         setActiveButton(buttonName);
         setNameLabel(nameLabel);
+    }
+
+    const Exit = () => {
+        navigate("/");
     }
 
     return (
@@ -26,8 +32,8 @@ const WorkZone = () => {
             <div className="workzone">
                 <div className="header">
                     <div className="headerContents">
-                        <label htmlFor="">Арсений Королёв</label>
-                        <button className={'exitIcon'}>
+                        <label htmlFor="">{id.id}</label>
+                        <button className={'exitIcon'} onClick={() => Exit()}>
                             <FontAwesomeIcon icon={faRightToBracket} />
                         </button>
                     </div>

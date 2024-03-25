@@ -4,17 +4,30 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
 var SignIn = function SignIn(_ref) {
-  var setShowSignUpForm = _ref.setShowSignUpForm,
-    setShowWorkZone = _ref.setShowWorkZone;
+  var setShowSignUpForm = _ref.setShowSignUpForm;
+  var inputEmail = (0, _react.useRef)(null);
+  var inputPassword = (0, _react.useRef)(null);
+  var navigate = (0, _reactRouterDom.useNavigate)();
+  var OpenWorkZone = function OpenWorkZone(id) {
+    if (inputEmail.current.value != "" && inputPassword.current.value != "") {
+      navigate("/workzone/".concat(id));
+    } else {
+      window.alert('Enter email and password');
+    }
+  };
   return /*#__PURE__*/React.createElement("div", {
     className: "container"
   }, /*#__PURE__*/React.createElement("h1", null, "Sign In"), /*#__PURE__*/React.createElement("input", {
     type: "text",
-    placeholder: "Email"
+    placeholder: "Email",
+    ref: inputEmail
   }), /*#__PURE__*/React.createElement("input", {
     type: "password",
-    placeholder: "Password"
+    placeholder: "Password",
+    ref: inputPassword
   }), /*#__PURE__*/React.createElement("div", {
     className: "remindPass"
   }, /*#__PURE__*/React.createElement("a", {
@@ -23,7 +36,7 @@ var SignIn = function SignIn(_ref) {
     className: "signInButton signInButton1"
   }, /*#__PURE__*/React.createElement("button", {
     onClick: function onClick() {
-      return setShowWorkZone(true);
+      return OpenWorkZone(inputEmail.current.value);
     }
   }, "Sign in")), /*#__PURE__*/React.createElement("div", {
     className: "forButtonSwitch"

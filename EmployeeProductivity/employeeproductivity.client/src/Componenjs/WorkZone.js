@@ -12,6 +12,7 @@ var _Post = _interopRequireDefault(require("./Post"));
 var _Tasks = _interopRequireDefault(require("./Tasks"));
 var _OffersTask = _interopRequireDefault(require("./OffersTask"));
 var _Statistic = _interopRequireDefault(require("./Statistic"));
+var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -28,25 +29,19 @@ var WorkZone = function WorkZone() {
     _useState4 = _slicedToArray(_useState3, 2),
     activeButton = _useState4[0],
     setActiveButton = _useState4[1];
-  var _useState5 = (0, _react.useState)([{
-      title: 'Купить пиво',
-      deadLine: '25/04/2024',
-      countStars: 2
-    }, {
-      title: 'Купить селёдочки',
-      deadLine: '25/04/2024',
-      countStars: 3
-    }, {
-      title: 'Сходить нахуй',
-      deadLine: '12/03/2024',
-      countStars: 3
-    }]),
+  var _useState5 = (0, _react.useState)([]),
     _useState6 = _slicedToArray(_useState5, 2),
     posts = _useState6[0],
     setPosts = _useState6[1];
+  var navigate = (0, _reactRouterDom.useNavigate)();
+  var id = (0, _reactRouterDom.useParams)();
+  console.log(id.id);
   var ChangePage = function ChangePage(nameLabel, buttonName) {
     setActiveButton(buttonName);
     setNameLabel(nameLabel);
+  };
+  var Exit = function Exit() {
+    navigate("/");
   };
   return /*#__PURE__*/React.createElement("div", {
     className: "mainViewWork"
@@ -58,8 +53,11 @@ var WorkZone = function WorkZone() {
     className: "headerContents"
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: ""
-  }, "\u0410\u0440\u0441\u0435\u043D\u0438\u0439 \u041A\u043E\u0440\u043E\u043B\u0451\u0432"), /*#__PURE__*/React.createElement("button", {
-    className: 'exitIcon'
+  }, id.id), /*#__PURE__*/React.createElement("button", {
+    className: 'exitIcon',
+    onClick: function onClick() {
+      return Exit();
+    }
   }, /*#__PURE__*/React.createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: _freeSolidSvgIcons.faRightToBracket
   }))), /*#__PURE__*/React.createElement("label", {

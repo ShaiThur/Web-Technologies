@@ -5,7 +5,7 @@ const PostList = ({posts}) => {
 
     return (
         <>
-            {posts.map((post) => <Post post = {post}/>)}
+            {posts.length == 0 ? null : posts.map((post) => <Post post = {post}/>)}
         </>
     );
 };

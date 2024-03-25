@@ -15,29 +15,32 @@ $activeColor: rgba(66,170,255);
 
 
 .mainViewWork{
-    margin-top: 10vh;
-    width: 85vw;
-    height: 100%;
-    border-radius: 2vw;
-}
-
-.workzone{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    background-color: $backgColor;
+    background-image: url("../src/images/workzone_backgrimage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
-.workzone .header{
-    height: 22vh;
-    width: 100%;
+.workzone{
     display: flex;
+    background-color: $backgColor;
+    width: 85vw;
+    height: 150vh;
+    border-radius: 70px;
+    margin-top: 60px;
     flex-direction: column;
-    margin-top: -100px;
+}
+
+.workzone .header{
+    display: flex;
     background-color: white;
+    height: 220px;
+    flex-direction: column;
+    width: 100%;
+    margin-top: -70px;
 }
 
 .workzone .header .headerContents{

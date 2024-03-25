@@ -10,7 +10,7 @@ var _Form = _interopRequireDefault(require("./Components/Form"));
 var _react = require("react");
 var _WorkZone = _interopRequireDefault(require("./Components/WorkZone"));
 var _backgrimage = _interopRequireDefault(require("../src/images/backgrimage.jpg"));
-var _workzone_backgrimage = _interopRequireDefault(require("../src/images/workzone_backgrimage.jpg"));
+var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -25,9 +25,7 @@ function App() {
     setShowWorkZone = _useState2[1];
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "backimage",
-    style: showWorkZone ? {
-      backgroundImage: "url(".concat(_workzone_backgrimage.default, ")")
-    } : {
+    style: {
       backgroundImage: "url(".concat(_backgrimage.default, ")")
     }
   }, /*#__PURE__*/React.createElement("div", {
@@ -38,8 +36,12 @@ function App() {
       justifyContent: 'center',
       alignItems: 'center'
     }
-  }, showWorkZone ? /*#__PURE__*/React.createElement(_WorkZone.default, null) : /*#__PURE__*/React.createElement(_Form.default, {
-    setShowWorkZone: setShowWorkZone
-  }))));
+  }, /*#__PURE__*/React.createElement(_Form.default, null))), /*#__PURE__*/React.createElement(_reactRouterDom.Routes, null, /*#__PURE__*/React.createElement(_reactRouterDom.Route, {
+    path: "/workzone/:id",
+    element: /*#__PURE__*/React.createElement(_WorkZone.default, null)
+  }), /*#__PURE__*/React.createElement(_reactRouterDom.Route, {
+    path: "/form",
+    element: /*#__PURE__*/React.createElement(_Form.default, null)
+  })));
 }
 var _default = exports.default = App;
