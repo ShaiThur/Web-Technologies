@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\cpp\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj": {}
+    "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj": {}
   },
   "projects": {
-    "D:\\cpp\\EployeesApp\\Application\\Application.csproj": {
+    "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cpp\\EployeesApp\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\cpp\\EployeesApp\\Application\\Application.csproj",
+        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\cpp\\EployeesApp\\Application\\obj\\",
+        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\cpp\\EployeesApp\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\cpp\\EployeesApp\\Domain\\Domain.csproj"
+              "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "D:\\cpp\\EployeesApp\\Domain\\Domain.csproj": {
+    "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cpp\\EployeesApp\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\cpp\\EployeesApp\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\cpp\\EployeesApp\\Domain\\obj\\",
+        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -162,110 +162,14 @@
         }
       }
     },
-    "D:\\cpp\\EployeesApp\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cpp\\EployeesApp\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "D:\\cpp\\EployeesApp\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\cpp\\EployeesApp\\Infrastructure\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\sartu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "D:\\cpp\\EployeesApp\\Application\\Application.csproj": {
-                "projectPath": "D:\\cpp\\EployeesApp\\Application\\Application.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "BCrypt.Net-Next": {
-              "target": "Package",
-              "version": "[4.0.3, )"
-            },
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.3, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[8.0.2, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "D:\\cpp\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\cpp\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj",
+        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj",
         "projectName": "EmployeeProductivity.Server",
-        "projectPath": "D:\\cpp\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj",
+        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj",
         "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\cpp\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\obj\\",
+        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -286,8 +190,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\cpp\\EployeesApp\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\cpp\\EployeesApp\\Infrastructure\\Infrastructure.csproj"
+              "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -349,6 +253,102 @@
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
             },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
+        "projectName": "Infrastructure",
+        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
+        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\sartu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
+                "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
