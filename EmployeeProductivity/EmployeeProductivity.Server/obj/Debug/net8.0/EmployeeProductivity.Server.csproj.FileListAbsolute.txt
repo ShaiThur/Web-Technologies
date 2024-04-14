@@ -145,7 +145,6 @@ D:\cpp\Web-Technologies\EmployeeProductivity\EmployeeProductivity.Server\obj\Deb
 D:\Web-Technologies\EmployeeProductivity\EmployeeProductivity.Server\obj\Debug\net8.0\EmployeeProductivity.Server.dll
 D:\Web-Technologies\EmployeeProductivity\EmployeeProductivity.Server\obj\Debug\net8.0\refint\EmployeeProductivity.Server.dll
 D:\Web-Technologies\EmployeeProductivity\EmployeeProductivity.Server\obj\Debug\net8.0\EmployeeProductivity.Server.pdb
-D:\Web-Technologies\EmployeeProductivity\EmployeeProductivity.Server\bin\Debug\net8.0\appsettings.Development.json
 D:\Web-Technologies\EmployeeProductivity\EmployeeProductivity.Server\bin\Debug\net8.0\appsettings.json
 D:\Web-Technologies\EmployeeProductivity\EmployeeProductivity.Server\bin\Debug\net8.0\spa.proxy.json
 D:\Web-Technologies\EmployeeProductivity\EmployeeProductivity.Server\bin\Debug\net8.0\EmployeeProductivity.Server.exe
