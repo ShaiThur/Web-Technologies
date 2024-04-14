@@ -1,19 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import MyModal from "./MyModal";
+import Modal from "react-modal";
+import MyModalView from "./MyModalView";
 
-const Post = (props) => {
+const Post = ({post, nameOfOption}) => {
+    const [modalIsOpen, setIsOpen] = useState(false);
     const stars = []
-    for (let i = 0; i < props.post.countStars; i++)
+    for (let i = 0; i < post.countStars; i++)
         stars.push([<FontAwesomeIcon icon={faStar} className="starIcon"/>])
+
+    function showInformation(){
+        setIsOpen(true)
+    }
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+        },
+    };
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
 
     return (
         <>
-            <div className='post'>
+            <div className='post' onClick={() => showInformation()}>
                 <div className='postContent'>
-                    <strong>{props.post.title}</strong>
+                    <strong>{post.title}</strong>
                     <div>
-                        Срок сдачи: {props.post.deadLine}
+                        Срок сдачи: {post.deadLine}
                     </div>
 
                 </div>
@@ -21,9 +47,18 @@ const Post = (props) => {
                     <div className='difficulty'>
                         {stars}
                     </div>
-                    <button>Взять</button>
+                    {nameOfOption = "Задачи" ? <></> : <button>Взять</button> }
                 </div>
             </div>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+                ariaHideApp={false}
+            >
+                <MyModalView title={post.title} description={post.description} date={post.deadLine}/>
+            </Modal>
         </>
     );
 };

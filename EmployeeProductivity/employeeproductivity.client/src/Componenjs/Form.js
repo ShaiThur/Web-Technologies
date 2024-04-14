@@ -20,7 +20,7 @@ var Form = function Form() {
     _useState2 = _slicedToArray(_useState, 2),
     showSignUpForm = _useState2[0],
     setShowSignUpForm = _useState2[1];
-  var myHeight = showSignUpForm ? 720 : 550;
+  var myHeight = showSignUpForm ? 820 : 550;
   var myTop = showSignUpForm ? 140 : 210;
   return /*#__PURE__*/React.createElement("div", {
     className: "mainView",

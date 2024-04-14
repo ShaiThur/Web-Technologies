@@ -1,3 +1,4 @@
+@import "mixins";
 
 .container{
     display: flex;
@@ -17,20 +18,11 @@ h1{
 }
 
 input{
-    font-size: 20px;
-    width: 400px;
-    border-radius: 10px;
-    height: 55px;
-    font-weight: lighter;
-    text-indent: 15px;
-    background-color: #f7f7f7;
-    margin-top: 20px;
-    border: 1.5px solid #7d7f7d;
+    @include inputs
 }
 
 input::placeholder{
-    margin-left: 20px;
-    color: #808080;
+    @include inputs_placeholders
 }
 
 .remindPass{
@@ -47,7 +39,7 @@ a{
     font-weight: lighter;
 }
 
-.signInButton{
+.signButton{
     width: $button_width + 10px;
     height: $button_height + 10px;
     display: flex;
@@ -58,7 +50,7 @@ a{
     margin-top: 50px;
 }
 
-.signInButton button{
+.signButton button{
     width: $button_width;
     height: $button_height;
     border-radius: $button_borderRad;
@@ -104,4 +96,30 @@ a{
 
 .forButtonSwitch{
     width: $button_width + 10px;
+}
+
+select{
+    @include inputs
+}
+
+input::placeholder{
+    @include inputs_placeholders
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+}
+
+.checkbox input{
+    transform: scale(0.5);
+    width: 40px;
+}
+
+.checkbox p{
+    margin-top: 20px;
 }

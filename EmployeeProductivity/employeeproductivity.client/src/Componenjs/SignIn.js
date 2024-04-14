@@ -10,8 +10,10 @@ var SignIn = function SignIn(_ref) {
   var setShowSignUpForm = _ref.setShowSignUpForm;
   var inputEmail = (0, _react.useRef)(null);
   var inputPassword = (0, _react.useRef)(null);
+  var typeOfUser = "director";
   var navigate = (0, _reactRouterDom.useNavigate)();
-  var OpenWorkZone = function OpenWorkZone(id) {
+  var OpenWorkZone = function OpenWorkZone() {
+    var id = "".concat(inputEmail.current.value, ";").concat(typeOfUser);
     if (inputEmail.current.value != "" && inputPassword.current.value != "") {
       navigate("/workzone/".concat(id));
     } else {
@@ -33,10 +35,10 @@ var SignIn = function SignIn(_ref) {
   }, /*#__PURE__*/React.createElement("a", {
     href: ""
   }, "Forgot password?")), /*#__PURE__*/React.createElement("div", {
-    className: "signInButton signInButton1"
+    className: "signButton signInButton"
   }, /*#__PURE__*/React.createElement("button", {
     onClick: function onClick() {
-      return OpenWorkZone(inputEmail.current.value);
+      return OpenWorkZone();
     }
   }, "Sign in")), /*#__PURE__*/React.createElement("div", {
     className: "forButtonSwitch"

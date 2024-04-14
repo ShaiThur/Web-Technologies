@@ -1,6 +1,11 @@
+@import "mixins";
+
 $backgColor: rgba(255, 255, 255, 0.5);
 $borderColor: rgba(255, 255, 255, 0.8);
 $activeColor: rgba(66,170,255);
+$button_width: 100px;
+$button_height: 55px;
+$button_borderRad: 15px;
 
 @font-face {
     font-family: 'MyCustomFont';
@@ -103,7 +108,7 @@ $activeColor: rgba(66,170,255);
     width: 85vw;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -118,6 +123,10 @@ $activeColor: rgba(66,170,255);
     background-color: white;
     border-radius: 20px;
     border: none;
+}
+
+.workzone .body .post{
+    cursor: pointer;
 }
 
 .workzone .body .postHelper{
@@ -145,4 +154,54 @@ $activeColor: rgba(66,170,255);
     width: 3vw;
     height: 25px;
     border-radius: 9px;
+}
+
+.plusTask{
+    background-color: white;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    margin-left: 50px;
+    align-self: flex-start;
+}
+
+.modalContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modalContent button{
+    width: $button_width;
+    height: $button_height;
+    border-radius: $button_borderRad;
+    background-color: #70b1ff;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+.modalForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+textarea{
+    @include inputs;
+    height: 155px;
+}
+
+.addTaskButton{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }

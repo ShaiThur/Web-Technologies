@@ -6,10 +6,13 @@ const SignIn = ( {setShowSignUpForm} : {setShowSignUpForm: (show: boolean) => vo
 
     const inputEmail = useRef(null);
     const inputPassword = useRef(null);
+    const typeOfUser = "director";
+    const selectedOption = "tasks";
 
     const navigate = useNavigate();
 
-    const OpenWorkZone = (id) => {
+    const OpenWorkZone = () => {
+        const id : string = `${inputEmail.current.value};${typeOfUser}`
         if(inputEmail.current.value != "" && inputPassword.current.value != ""){
             navigate(`/workzone/${id}`);
         }
@@ -26,8 +29,8 @@ const SignIn = ( {setShowSignUpForm} : {setShowSignUpForm: (show: boolean) => vo
             <div className="remindPass">
                 <a href="">Forgot password?</a>
             </div>
-            <div className="signInButton signInButton1">
-                <button onClick={() => OpenWorkZone(inputEmail.current.value)}>Sign in</button>
+            <div className="signButton signInButton">
+                <button onClick={() => OpenWorkZone()}>Sign in</button>
             </div>
             <div className="forButtonSwitch">
                 <button onClick={() => setShowSignUpForm(true)} className="buttonSwitch">Or sign up?</button>

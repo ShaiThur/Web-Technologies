@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Statistic = () => {
+const StatisticForOne = () => {
     return (
         <>
 
@@ -8,4 +8,4 @@ const Statistic = () => {
     );
 };
 
-export default Statistic;
+export default StatisticForOne;

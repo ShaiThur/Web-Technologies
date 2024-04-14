@@ -5,6 +5,9 @@ import { useState } from 'react';
 import WorkZone from './Components/WorkZone'
 import backgrImageForm from '../src/images/backgrimage.jpg'
 import { Routes, Route } from 'react-router-dom';
+import ErrorPage from "./Components/ErrorPage";
+import PageForDirector from "./Components/PageForDirector";
+import Tasks from "./Components/Tasks";
 function App() {
     const [showWorkZone, setShowWorkZone] = useState(false)
 
@@ -16,8 +19,10 @@ function App() {
                 </div>
             </div>
             <Routes>
-                <Route path="/workzone/:id" element={<WorkZone />} />
+                <Route index element={<Form/>} />
+                <Route path="/workzone/:id" element={<WorkZone />}/>
                 <Route path="/form" element={<Form />} />
+                <Route path="/*" element={<ErrorPage/>}/>
             </Routes>
         </div>
     );
