@@ -1,23 +1,11 @@
 {
   "Version": 1,
-  "Hash": "R7fJq9DVacHfwRUVZj2i7qedmwctffhJcLdcrRBOzz8=",
+  "Hash": "QCEw7ucR/uX2EZ25J77aHbE4pZWCfNRn7BqoRfaq1ig=",
   "Source": "EmployeeProductivity.Server",
   "BasePath": "_content/EmployeeProductivity.Server",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [
-    {
-      "Identity": "D:\\cpp\\Web-Technologies\\EmployeeProductivity\\employeeproductivity.client\\employeeproductivity.client.esproj",
-      "Version": 2,
-      "Source": "employeeproductivity.client",
-      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
-      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
-      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
-    }
-  ],
+  "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
   "Assets": []
 }

@@ -8,6 +8,7 @@
     <SpaRoot>..\employeeproductivity.client</SpaRoot>
     <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:5173</SpaProxyServerUrl>
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,9 +27,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\EployeesApp\Infrastructure\Infrastructure.csproj" />
-    <ProjectReference Include="..\employeeproductivity.client\employeeproductivity.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
   </ItemGroup>
 
 </Project>

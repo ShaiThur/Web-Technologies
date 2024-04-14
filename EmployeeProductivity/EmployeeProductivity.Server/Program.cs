@@ -20,7 +20,7 @@ namespace EmployeeProductivity.Server
             builder.Services.AddEndpointsApiExplorer();
 
             var app = builder.Build();
-            app.UseResponseCompression();
+            //app.UseResponseCompression();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
@@ -45,7 +45,7 @@ namespace EmployeeProductivity.Server
 
             app.MapControllers();
 
-            app.MapFallbackToFile("/index.html");
+            //app.MapFallbackToFile("/index.html");
 
             app.UseExceptionHandler(options => { });
 
