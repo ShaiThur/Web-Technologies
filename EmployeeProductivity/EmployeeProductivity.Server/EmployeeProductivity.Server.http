@@ -1,0 +1,6 @@
+@EmployeeProductivity.Server_HostAddress = http://localhost:5258
+
+GET {{EmployeeProductivity.Server_HostAddress}}/
+Accept: application/json
+
+###
