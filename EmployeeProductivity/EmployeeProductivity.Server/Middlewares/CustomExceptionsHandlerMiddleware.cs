@@ -13,7 +13,8 @@ namespace EmployeeProductivity.Server.Middleware
             _exceptionHandlers = new()
             {
                 { typeof(MyValidationException), HandleValidationException },
-                { typeof(NullEntityException), HandleNullEntityException }
+                { typeof(NullEntityException), HandleNullEntityException },
+                {typeof(ForbiddenAccessException), HandleForbiddenAccessException }
             };
         }
 
@@ -52,6 +53,19 @@ namespace EmployeeProductivity.Server.Middleware
             await context.Response.WriteAsJsonAsync(new ProblemDetails
             {
                 Status = StatusCodes.Status404NotFound,
+                Title = exception.Message
+            });
+        }
+
+        private async Task HandleForbiddenAccessException(HttpContext context, Exception ex)
+        {
+            var exception = (ForbiddenAccessException)ex;
+
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+
+            await context.Response.WriteAsJsonAsync(new ProblemDetails
+            {
+                Status = StatusCodes.Status401Unauthorized,
                 Title = exception.Message
             });
         }

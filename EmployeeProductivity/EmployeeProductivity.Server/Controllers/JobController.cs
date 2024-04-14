@@ -7,6 +7,9 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Application.Common.Exceptions;
 using Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
+using Domain.Constants;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace EmployeeProductivity.Server.Controllers
 {

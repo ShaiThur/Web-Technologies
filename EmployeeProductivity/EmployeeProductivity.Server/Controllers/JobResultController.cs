@@ -18,8 +18,8 @@ namespace EmployeeProductivity.Server.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<JobResultVM> GetJobResult(Guid id) 
-            => await _sender.Send(new GetJobResultQuery { Id = id });
+        public async Task<JobResultVM> GetJobResult(Guid jobId) 
+            => await _sender.Send(new GetJobResultQuery { JobId = jobId });
 
         [HttpPost]
         public async Task<Guid> CreateJobResult([AsParameters] CreateJobResultCommand jobResult) 

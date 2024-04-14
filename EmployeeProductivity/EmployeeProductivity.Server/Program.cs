@@ -14,22 +14,10 @@ namespace EmployeeProductivity.Server
 
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
-
-            builder.Services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAll", policy =>
-                {
-                    policy.AllowAnyHeader();
-                    policy.AllowAnyOrigin();
-                    policy.AllowAnyMethod();
-                });
-            });
+            builder.Services.AddServerServices();
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            builder.Services.AddExceptionHandler<CustomExceptionsHandlerMiddleware>();
 
             var app = builder.Build();
             app.UseResponseCompression();
@@ -43,6 +31,8 @@ namespace EmployeeProductivity.Server
                 app.UseSwaggerUI();
             }
 
+
+
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
@@ -50,12 +40,14 @@ namespace EmployeeProductivity.Server
             app.UseAuthentication();
             app.UseAuthorization();
 
-
-            app.UseExceptionHandler(options => { });
+            app.UseCustomAuthorization();
+            //app.MapMyIdentityApi<ApplicationUser>();
 
             app.MapControllers();
 
             app.MapFallbackToFile("/index.html");
+
+            app.UseExceptionHandler(options => { });
 
             app.Run();
         }
