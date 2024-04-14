@@ -1,0 +1,16 @@
+@mixin inputs{
+  font-size: 20px;
+  width: 400px;
+  border-radius: 10px;
+  height: 55px;
+  font-weight: lighter;
+  padding-left: 15px;
+  background-color: #f7f7f7;
+  margin-top: 20px;
+  border: 1.5px solid #7d7f7d;
+}
+
+@mixin inputs_placeholders{
+  margin-left: 20px;
+  color: #808080;
+}
