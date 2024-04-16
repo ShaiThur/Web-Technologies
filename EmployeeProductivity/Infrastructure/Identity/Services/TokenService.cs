@@ -49,7 +49,7 @@ namespace Infrastructure.Identity.Services
         private async Task<ApplicationUser> FindUserAsync(string login)
         {
             var user = await _userManager.FindByEmailAsync(login)
-                ?? throw new NullEntityException($"{nameof(ApplicationUser)} not found");
+                ?? throw new NullEntityException($"{nameof(ApplicationUser)}");
 
             return user;
         }
@@ -131,7 +131,7 @@ namespace Infrastructure.Identity.Services
             user.RefreshTokenExpiry = DateTime.UtcNow.AddMinutes(expiresTime);
         }
 
-        private ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
+        public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
         {
             var secret = _configuration["JWT:Secret"] ?? throw new InvalidOperationException("Secret not configured");
 

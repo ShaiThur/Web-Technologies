@@ -3,6 +3,7 @@ using Application.Common.Interfaces.Identity;
 using Application.Common.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
 
 namespace Infrastructure.Identity.Services
 {
@@ -10,19 +11,19 @@ namespace Infrastructure.Identity.Services
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IUserClaimsPrincipalFactory<ApplicationUser> _userClaimsPrincipalFactory;
         private readonly IAuthorizationService _authorizationService;
+        private readonly ITokenService _tokenService;
 
         public IdentityService(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IUserClaimsPrincipalFactory<ApplicationUser> userClaimsPrincipalFactory,
-            IAuthorizationService authorizationService)
+            IAuthorizationService authorizationService,
+            ITokenService tokenService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
-            _userClaimsPrincipalFactory = userClaimsPrincipalFactory;
             _authorizationService = authorizationService;
+            _tokenService = tokenService;
         }
 
         public async Task<bool> AuthorizeAsync(string login, string password)
@@ -61,15 +62,19 @@ namespace Infrastructure.Identity.Services
             return false;
         }
 
-        public async Task<bool> IsInPolicyAsync(string login, string policy)
+        public async Task<bool> IsAuthenticatedAsync(string accessToken, string policy)
         {
-            var user = await _userManager.FindByIdAsync(login);
+            var claims = _tokenService.GetPrincipalFromExpiredToken(accessToken)
+                ?? throw new UnauthorizedAccessException();
+            var result = await _authorizationService.AuthorizeAsync(claims, policy);
 
-            if (user == null)
-                throw new NullEntityException($"{nameof(ApplicationUser)} not found");
+            var user = await _userManager.FindByNameAsync(claims.Identity.Name);
 
-            var principal = await _userClaimsPrincipalFactory.CreateAsync(user);
-            var result = await _authorizationService.AuthorizeAsync(principal, policy);
+            if (user is null || user.RefreshTokenExpiry < DateTime.UtcNow || !result.Succeeded)
+            {
+                await SignOutAsync();
+                throw new UnauthorizedAccessException();
+            }
 
             return result.Succeeded;
         }
@@ -82,7 +87,10 @@ namespace Infrastructure.Identity.Services
             if (await _userManager.CheckPasswordAsync(user, password))
                 await _userManager.DeleteAsync(user);
             else
-                throw new UnauthorizedAccessException();
+                throw new UnauthorizedAccessException("incorrect password");
         }
+
+        public async Task SignOutAsync() 
+            => await _signInManager.SignOutAsync();
     }
 }

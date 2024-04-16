@@ -14,7 +14,7 @@ namespace EmployeeProductivity.Server.Middleware
             {
                 { typeof(MyValidationException), HandleValidationException },
                 { typeof(NullEntityException), HandleNullEntityException },
-                {typeof(ForbiddenAccessException), HandleForbiddenAccessException }
+                {typeof(UnauthorizedAccessException), HandleUnauthorizedAccessException }
             };
         }
 
@@ -57,9 +57,9 @@ namespace EmployeeProductivity.Server.Middleware
             });
         }
 
-        private async Task HandleForbiddenAccessException(HttpContext context, Exception ex)
+        private async Task HandleUnauthorizedAccessException(HttpContext context, Exception ex)
         {
-            var exception = (ForbiddenAccessException)ex;
+            var exception = (UnauthorizedAccessException)ex;
 
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
 

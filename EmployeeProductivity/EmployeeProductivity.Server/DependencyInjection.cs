@@ -21,16 +21,15 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddSwaggerGen(options =>
             {
-                options.AddSecurityDefinition("oauth2", new OpenApi.Models.OpenApiSecurityScheme
+                options.AddSecurityDefinition("Jwt", new OpenApi.Models.OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
                     Name = "Authorization",
                     Type = SecuritySchemeType.ApiKey
                 });
             });
-
-            services.AddSingleton<IAuthorizationService, DefaultAuthorizationService>();
             services.AddExceptionHandler<CustomExceptionsHandlerMiddleware>();
+            services.AddSingleton<IAuthorizationService, DefaultAuthorizationService>();
             return services;
         }
     }

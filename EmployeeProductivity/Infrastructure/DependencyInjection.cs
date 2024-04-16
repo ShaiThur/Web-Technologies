@@ -7,9 +7,7 @@ using Infrastructure.Identity;
 using Infrastructure.Identity.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -60,10 +58,13 @@ namespace Microsoft.Extensions.DependencyInjection
                     .RequireAuthenticatedUser()
                     .Build();
 
+                options.AddPolicy(Polices.CanSee, policy => policy.RequireRole(Roles.Administrator, Roles.Director, Roles.Employee));
                 options.AddPolicy(Polices.CanCreate, policy => policy.RequireRole(Roles.Administrator, Roles.Director));
                 options.AddPolicy(Polices.CanUpdate, policy => policy.RequireRole(Roles.Administrator, Roles.Director, Roles.Employee));
-                options.AddPolicy(Polices.CanDelete, policy => policy.RequireRole(Roles.Administrator, Roles.Director));
-                options.AddPolicy(Polices.CanSee, policy => policy.RequireRole(Roles.Employee));
+                options.AddPolicy(Polices.CanDeleteJobResults, policy => policy.RequireRole(Roles.Administrator, Roles.Employee));
+                options.AddPolicy(Polices.CanDeleteJobResults, policy => policy.RequireRole(Roles.Administrator, Roles.Director));
+                options.AddPolicy(Polices.CanDeleteItself, policy => policy.RequireRole(Roles.Administrator, Roles.Director, Roles.Employee));
+                options.AddPolicy(Polices.CanRevokeTokens, policy => policy.RequireRole(Roles.Administrator, Roles.Director, Roles.Employee));
             });
 
             services
@@ -75,11 +76,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddSingleton(TimeProvider.System);
 
-            services.AddTransient<IIdentityService, IdentityService>();
+            services.AddScoped<IIdentityService, IdentityService>();
             services.AddTransient<IRolesService, RolesService>();
             services.AddTransient<ITokenService, TokenService>();
-
-            services.AddScoped<TokenService>();
 
             return services;
         }

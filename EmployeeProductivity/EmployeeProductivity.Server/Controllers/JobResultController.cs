@@ -4,8 +4,10 @@ using Application.JobResults.Commands.CreateJobResult;
 using Application.JobResults.Commands.DeleteJobResult;
 using Application.JobResults.Commands.UpdateJobResult;
 using Application.JobResults.Queries;
+using Domain.Constants;
 using Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeProductivity.Server.Controllers
@@ -16,15 +18,18 @@ namespace EmployeeProductivity.Server.Controllers
         {
         }
 
+        //[Authorize(Policy = Polices.CanSee)]
         [HttpGet]
         [Route("{id}")]
         public async Task<JobResultVM> GetJobResult(Guid jobId) 
             => await _sender.Send(new GetJobResultQuery { JobId = jobId });
 
+        //[Authorize(Policy = Polices.CanCreate)]
         [HttpPost]
         public async Task<Guid> CreateJobResult([AsParameters] CreateJobResultCommand jobResult) 
             => await _sender.Send(jobResult);
 
+        //[Authorize(Policy = Polices.CanUpdate)]
         [HttpPut]
         [Route("{id}")]
         public async Task UpdateJobResult(Guid id, [AsParameters] UpdateJobResultCommand jobResult)
@@ -35,6 +40,7 @@ namespace EmployeeProductivity.Server.Controllers
             await _sender.Send(jobResult);
         }
 
+        //[Authorize(Policy = Polices.CanDeleteJobResults)]
         [HttpDelete]
         [Route("{id}")]
         public async Task DeleteJobResult(Guid id)

@@ -1,4 +1,5 @@
 ﻿using Application.Common.Models;
+using System.Security.Claims;
 
 namespace Application.Common.Interfaces.Identity
 {
@@ -10,8 +11,10 @@ namespace Application.Common.Interfaces.Identity
 
         Task<bool> IsInRoleAsync(string login, string role);
 
-        Task<bool> IsInPolicyAsync(string id, string policy);
+        Task<bool> IsAuthenticatedAsync(string accessToken, string policy);
 
         Task DeleteUserAsync(string email, string password);
+
+        Task SignOutAsync();
     }
 }

@@ -27,7 +27,7 @@ namespace EmployeeProductivity.Server.Controllers
             var result = await _identityService.CreateUserAsync(request.Email, request.Password);
             return result.Errors;
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> AuthorizeUserAsync([FromBody] LoginUserRequest loginUser)
         {
@@ -41,28 +41,18 @@ namespace EmployeeProductivity.Server.Controllers
             return NotFound();
         }
 
-        [Authorize(Policy = Polices.CanUpdate)]
-        [HttpPost]
-        public async Task<IActionResult> RefreshUserTokensAsync([FromBody] RefreshUserRequest request)
-        {
-            var result = await _tokenService.RefreshUserTokenAsync(request.AccessToken, request.RefreshToken);
-            return Ok(new { accessToken = result.Item1, refreshToken = result.Item2 });
-        }
-
-        [Authorize(Policy = Polices.CanDelete)]
-        [HttpDelete]
-        public async Task<IActionResult> RevokeRefreshTokenAsync([FromBody] RevokeUserRequest request)
-        {
-            await _tokenService.RevokeUserRefreshTokenAsync(request.Login, request.RefreshToken);
-            return Ok();
-        }
-
+        [Authorize(Policy = Polices.CanDeleteItself)]
         [HttpDelete]
         public async Task<IActionResult> DeleteUserAsync([FromBody] LoginUserRequest request)
         {
             await _identityService.DeleteUserAsync(request.Email, request.Password);
             return Ok();
         }
+
+        [Authorize(Policy = Polices.CanSee)]
+        [HttpGet]
+        public async Task SignOutUserAsync() 
+            => await _identityService.SignOutAsync();
     }
 }
 

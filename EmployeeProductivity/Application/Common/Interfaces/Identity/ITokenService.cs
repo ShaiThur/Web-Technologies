@@ -1,4 +1,6 @@
-﻿namespace Application.Common.Interfaces.Identity
+﻿using System.Security.Claims;
+
+namespace Application.Common.Interfaces.Identity
 {
     public interface ITokenService
     {
@@ -7,5 +9,7 @@
         Task<(string?, string?)> RefreshUserTokenAsync(string accessToken, string refreshToken);
 
         Task RevokeUserRefreshTokenAsync(string login, string refreshToken);
+
+        ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
     }
 }
