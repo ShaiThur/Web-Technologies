@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "81uVJ84H4cLTawCcsRu7Y488gIt/c5n6z0vgblTiVCI=",
+  "Source": "EmployeeProductivity.Server",
+  "BasePath": "_content/EmployeeProductivity.Server",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

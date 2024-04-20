@@ -1,5 +1,5 @@
 ﻿using Application.Common.Models;
-using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Application.Common.Interfaces.Identity
 {
@@ -7,13 +7,11 @@ namespace Application.Common.Interfaces.Identity
     {
         Task<Result> CreateUserAsync(string email, string password);
 
-        Task<bool> AuthorizeAsync(string login, string password);
+        Task<bool> TryAuthorizeAsync(string login, string password);
 
-        Task<bool> IsInRoleAsync(string login, string role);
+        Task<bool> IsAuthorizedAsync(string accessToken, string refreshToken, AuthorizationPolicy policy);
 
-        Task<bool> IsAuthenticatedAsync(string accessToken, string policy);
-
-        Task DeleteUserAsync(string email, string password);
+        Task<bool> DeleteUserAsync(string email, string password);
 
         Task SignOutAsync();
     }

@@ -4,11 +4,11 @@ namespace Application.Common.Interfaces.Identity
 {
     public interface ITokenService
     {
-        Task<(string?, string?)> CreateTokenAsync(string login);
+        Task<(string?, string?)> CreateTokensAsync(string login);
 
-        Task<(string?, string?)> RefreshUserTokenAsync(string accessToken, string refreshToken);
+        Task<string?> RefreshUserTokenAsync(string login);
 
-        Task RevokeUserRefreshTokenAsync(string login, string refreshToken);
+        Task RevokeUserRefreshTokenAsync(string login);
 
         ClaimsPrincipal GetPrincipalFromExpiredToken(string token);
     }

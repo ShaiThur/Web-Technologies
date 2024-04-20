@@ -1,66 +1,65 @@
 ﻿using Application.Common.Interfaces.Identity;
-using Infrastructure.Identity.Services;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Policy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Primitives;
 
 namespace EmployeeProductivity.Server.Middleware
 {
-    public class AuthorizationMiddleware
+    public class AuthorizationHandlerMiddleware : IAuthorizationMiddlewareResultHandler
     {
-        private readonly RequestDelegate _next;
+        private readonly IIdentityService _identityService;
 
-        public AuthorizationMiddleware(RequestDelegate next)
+        public AuthorizationHandlerMiddleware(IIdentityService identityService)
         {
-            _next = next;
+            _identityService = identityService;
         }
 
-        public async Task InvokeAsync(HttpContext context, IIdentityService identityService)
+        public async Task HandleAsync(RequestDelegate next,
+            HttpContext context,
+            AuthorizationPolicy policy,
+            PolicyAuthorizationResult authorizeResult)
         {
-            var endpoint = context.GetEndpoint();
-            if (endpoint != null)
+            if (policy == null)
             {
-                var authorizeAttribute = endpoint.Metadata.GetMetadata<AuthorizeAttribute>();
-                var token = context.Request.Headers["Authorization"].ToString();
-                var t = context.Response.Headers;
-                
-                //await identityService.IsAuthenticatedAsync(user, "CanSee");
+                await next(context);
+                return;
+            }
 
-                if (authorizeAttribute != null && authorizeAttribute.Policy != null)
+            if (context.User.Identity != null && context.User.Identity.IsAuthenticated)
+            {
+                context.Request.Cookies.TryGetValue("RefreshToken", out string? refreshToken);
+
+                var accessToken = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+
+                if (refreshToken == null || accessToken == string.Empty)
                 {
-                    var isAuthenticated = await identityService.IsAuthenticatedAsync(token, authorizeAttribute.Policy);
-
-                    if (!isAuthenticated)
-                    {
-                        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                        await context.Response.WriteAsJsonAsync(new ProblemDetails
-                        {
-                            Status = StatusCodes.Status401Unauthorized,
-                        });
-                        await _next(context);
-                    }
+                    await AddResponseToContextAsync(context, StatusCodes.Status400BadRequest);
+                    await next(context);
+                    return;
                 }
+                refreshToken = refreshToken.Replace("RefreshToken=", "");
+                var isAuthorized = await _identityService.IsAuthorizedAsync(accessToken, refreshToken, policy);
 
+                if (!isAuthorized)
+                {
+                    await AddResponseToContextAsync(context, StatusCodes.Status401Unauthorized);
+                }
             }
             else
             {
-                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                await context.Response.WriteAsJsonAsync(new ProblemDetails
-                {
-                    Status = StatusCodes.Status401Unauthorized,
-                });
+                await AddResponseToContextAsync(context, StatusCodes.Status401Unauthorized);
             }
 
-            await _next(context);
+            await next(context);
         }
-    }
 
-    public static class AuthorizationMiddlewareExtensions
-    {
-        public static IApplicationBuilder UseCustomAuthorization(this IApplicationBuilder builder)
+        private async Task AddResponseToContextAsync(HttpContext context, int statusCode)
         {
-            return builder.UseMiddleware<AuthorizationMiddleware>();
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            await context.Response.WriteAsJsonAsync(new ProblemDetails
+            {
+                Status = statusCode,
+            });
         }
     }
 }

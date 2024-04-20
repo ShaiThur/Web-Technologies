@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\Web-Technologies\\EmployeeProductivity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\controllers\\jobcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{216B2D1B-5969-4239-A7A4-9B5181749785}|Infrastructure\\Infrastructure.csproj|d:\\web-technologies\\employeeproductivity\\infrastructure\\identity\\services\\identityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{216B2D1B-5969-4239-A7A4-9B5181749785}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\identity\\services\\identityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\middlewares\\authorizationhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\middlewares\\authorizationhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{216B2D1B-5969-4239-A7A4-9B5181749785}|Infrastructure\\Infrastructure.csproj|d:\\web-technologies\\employeeproductivity\\infrastructure\\identity\\services\\identityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{216B2D1B-5969-4239-A7A4-9B5181749785}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\identity\\services\\identityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{216B2D1B-5969-4239-A7A4-9B5181749785}|Infrastructure\\Infrastructure.csproj|d:\\web-technologies\\employeeproductivity\\infrastructure\\identity\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{216B2D1B-5969-4239-A7A4-9B5181749785}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\identity\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|d:\\web-technologies\\employeeproductivity\\application\\common\\interfaces\\identity\\iidentityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|solutionrelative:application\\common\\interfaces\\identity\\iidentityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,28 +46,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "JobController.cs",
-              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\JobController.cs",
-              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Controllers\\JobController.cs",
-              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\JobController.cs",
-              "RelativeToolTip": "EmployeeProductivity.Server\\Controllers\\JobController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAWAAAA",
+              "DocumentIndex": 4,
+              "Title": "IIdentityService.cs",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Common\\Interfaces\\Identity\\IIdentityService.cs",
+              "RelativeDocumentMoniker": "Application\\Common\\Interfaces\\Identity\\IIdentityService.cs",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Common\\Interfaces\\Identity\\IIdentityService.cs",
+              "RelativeToolTip": "Application\\Common\\Interfaces\\Identity\\IIdentityService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T00:04:35.41Z",
+              "WhenOpened": "2024-04-20T20:10:05.688Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "EmployeeProductivity.Server\\DependencyInjection.cs",
               "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\DependencyInjection.cs",
               "RelativeToolTip": "EmployeeProductivity.Server\\DependencyInjection.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAApAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:58:52.554Z"
+              "WhenOpened": "2024-04-20T19:16:24.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Program.cs",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Program.cs",
+              "RelativeToolTip": "EmployeeProductivity.Server\\Program.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAYwBwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T08:15:03.822Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -73,21 +91,23 @@
               "RelativeDocumentMoniker": "Infrastructure\\Identity\\Services\\TokenService.cs",
               "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Identity\\Services\\TokenService.cs",
               "RelativeToolTip": "Infrastructure\\Identity\\Services\\TokenService.cs",
-              "ViewState": "AQIAADgAAAAAAAAAAAAUwG4AAAAXAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAwGcAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T23:01:00.788Z"
+              "WhenOpened": "2024-04-19T08:04:56.578Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IdentityService.cs",
-              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Identity\\Services\\IdentityService.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Identity\\Services\\IdentityService.cs",
-              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Identity\\Services\\IdentityService.cs",
-              "RelativeToolTip": "Infrastructure\\Identity\\Services\\IdentityService.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAgwEIAAAAMAAAA",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EmployeeProductivity.Server\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAowDoAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T22:05:44.573Z"
+              "WhenOpened": "2024-04-18T21:47:31.878Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -97,22 +117,23 @@
               "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Middlewares\\AuthorizationHandlerMiddleware.cs",
               "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Middlewares\\AuthorizationHandlerMiddleware.cs",
               "RelativeToolTip": "EmployeeProductivity.Server\\Middlewares\\AuthorizationHandlerMiddleware.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAxwB0AAAAQAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAiwC0AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-15T06:39:40.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Program.cs",
-              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Program.cs",
-              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Program.cs",
-              "RelativeToolTip": "EmployeeProductivity.Server\\Program.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBUAAAAMAAAA",
+              "DocumentIndex": 0,
+              "Title": "IdentityService.cs",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Identity\\Services\\IdentityService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Identity\\Services\\IdentityService.cs",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Identity\\Services\\IdentityService.cs",
+              "RelativeToolTip": "Infrastructure\\Identity\\Services\\IdentityService.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAIwEEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T06:40:30.823Z"
+              "WhenOpened": "2024-04-15T22:05:44.573Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -17,19 +17,42 @@ namespace Microsoft.Extensions.DependencyInjection
                     policy.AllowAnyMethod();
                 });
             });
-            //services.AddScoped<IUser, CurrentUser>();
 
             services.AddSwaggerGen(options =>
             {
-                options.AddSecurityDefinition("Jwt", new OpenApi.Models.OpenApiSecurityScheme
+                options.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    In = ParameterLocation.Header,
+                    Version = "v1",
+                    Title = "Employee productivity",
+                    Description = "About Application"
+                });
+
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
                     Name = "Authorization",
-                    Type = SecuritySchemeType.ApiKey
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                }
+                            },
+                            new string[] {}
+                    }
                 });
             });
             services.AddExceptionHandler<CustomExceptionsHandlerMiddleware>();
-            services.AddSingleton<IAuthorizationService, DefaultAuthorizationService>();
+            services.AddScoped<IAuthorizationMiddlewareResultHandler, AuthorizationHandlerMiddleware>();
             return services;
         }
     }

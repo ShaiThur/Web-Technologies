@@ -7,10 +7,10 @@ namespace EmployeeProductivity.Server
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddResponseCompression(options =>
-            {
-                options.EnableForHttps = true;
-            });
+            //builder.Services.AddResponseCompression(options =>
+            //{
+            //    options.EnableForHttps = true;
+            //});
 
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -22,8 +22,8 @@ namespace EmployeeProductivity.Server
             var app = builder.Build();
             //app.UseResponseCompression();
 
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
+            //app.UseDefaultFiles();
+            //app.UseStaticFiles();
 
             if (app.Environment.IsDevelopment())
             {
@@ -39,9 +39,6 @@ namespace EmployeeProductivity.Server
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseCustomAuthorization();
-            //app.MapMyIdentityApi<ApplicationUser>();
 
             app.MapControllers();
 

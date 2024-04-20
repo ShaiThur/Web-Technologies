@@ -3,7 +3,6 @@ using Application.Common.Interfaces.Identity;
 using Application.Common.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-using System.Security.Claims;
 
 namespace Infrastructure.Identity.Services
 {
@@ -26,7 +25,7 @@ namespace Infrastructure.Identity.Services
             _tokenService = tokenService;
         }
 
-        public async Task<bool> AuthorizeAsync(string login, string password)
+        public async Task<bool> TryAuthorizeAsync(string login, string password)
         {
             var user = await _userManager.FindByEmailAsync(login)
                 ?? throw new UnauthorizedAccessException();
@@ -49,45 +48,40 @@ namespace Infrastructure.Identity.Services
             return res.ToApplicationResult();
         }
 
-        public async Task<bool> IsInRoleAsync(string login, string role)
-        {
-            var user = await _userManager.FindByEmailAsync(login)
-                ?? throw new UnauthorizedAccessException();
-
-            var inRole = await _userManager.IsInRoleAsync(user, role);
-
-            if (inRole)
-                return true;
-
-            return false;
-        }
-
-        public async Task<bool> IsAuthenticatedAsync(string accessToken, string policy)
+        public async Task<bool> IsAuthorizedAsync(string accessToken, string refreshToken, AuthorizationPolicy policy)
         {
             var claims = _tokenService.GetPrincipalFromExpiredToken(accessToken)
                 ?? throw new UnauthorizedAccessException();
-            var result = await _authorizationService.AuthorizeAsync(claims, policy);
-
             var user = await _userManager.FindByNameAsync(claims.Identity.Name);
+            var hasValidPolicy = await _authorizationService.AuthorizeAsync(claims, policy);
 
-            if (user is null || user.RefreshTokenExpiry < DateTime.UtcNow || !result.Succeeded)
+            if (user is null || user.RefreshTokenExpiry < DateTime.UtcNow 
+                || user.RefreshToken != refreshToken || !hasValidPolicy.Succeeded)
             {
                 await SignOutAsync();
-                throw new UnauthorizedAccessException();
+                return false;
             }
 
-            return result.Succeeded;
+            return true;
         }
 
-        public async Task DeleteUserAsync(string login, string password)
+        public async Task<bool> DeleteUserAsync(string token, string password)
         {
-            var user = await _userManager.FindByEmailAsync(login)
-                   ?? throw new NullEntityException($"{nameof(ApplicationUser)} not found");
+            var claims = _tokenService.GetPrincipalFromExpiredToken(token)
+               ?? throw new UnauthorizedAccessException();
 
-            if (await _userManager.CheckPasswordAsync(user, password))
+            var user = await _userManager.FindByNameAsync(claims.Identity.Name)
+                ?? throw new NullEntityException($"{nameof(ApplicationUser)}");
+
+            var canDelete = await _userManager.CheckPasswordAsync(user, password);
+
+            if (canDelete)
+            {
                 await _userManager.DeleteAsync(user);
-            else
-                throw new UnauthorizedAccessException("incorrect password");
+                return true;
+            }
+
+            return false;
         }
 
         public async Task SignOutAsync() 

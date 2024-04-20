@@ -21,72 +21,40 @@ namespace Infrastructure.Identity.Services
             _userManager = userManager;
         }
 
-        public async Task<(string?, string?)> CreateTokenAsync(string login)
+        public async Task<(string?, string?)> CreateTokensAsync(string login)
         {
-            var accessToken = GenerateAccessToken(login);
-            var user = await FindUserAsync(login);
+            var user = await _userManager.FindByEmailAsync(login)
+                ?? throw new NullEntityException($"{nameof(ApplicationUser)}");
+            var userRole = await _userManager.GetRolesAsync(user);
+            var accessToken = GenerateAccessToken(login, userRole);
             GenerateRefreshToken(ref user);
+            await _userManager.UpdateAsync(user);
 
             return (new JwtSecurityTokenHandler().WriteToken(accessToken), user.RefreshToken);
         }
 
-        public async Task<(string?, string?)> RefreshUserTokenAsync(string accessToken, string refreshToken)
+        public async Task<string?> RefreshUserTokenAsync(string login)
         {
-            ApplicationUser user = await FindUserAsync(accessToken, refreshToken);
-            JwtSecurityToken newToken = new();
 
-            if (user.UserName != null)
-            {
-                newToken = GenerateAccessToken(user.UserName);
-            }          
-
-            GenerateRefreshToken(ref user);
-            await _userManager.UpdateAsync(user);
-
-            return (new JwtSecurityTokenHandler().WriteToken(newToken), user.RefreshToken);
-        }
-
-        private async Task<ApplicationUser> FindUserAsync(string login)
-        {
             var user = await _userManager.FindByEmailAsync(login)
-                ?? throw new NullEntityException($"{nameof(ApplicationUser)}");
+                ?? throw new UnauthorizedAccessException();
+            var userRoles = await _userManager.GetRolesAsync(user);
 
-            return user;
+            JwtSecurityToken newToken = GenerateAccessToken(login, userRoles);      
+
+            return new JwtSecurityTokenHandler().WriteToken(newToken);
         }
 
-        private async Task<ApplicationUser> FindUserAsync(string accessToken, string refreshToken)
-        {
-            var principal = GetPrincipalFromExpiredToken(accessToken);
-
-            if (principal?.Identity?.Name is null)
-                throw new UnauthorizedAccessException();
-
-            var user = await _userManager.FindByNameAsync(principal.Identity.Name);
-
-            if (user is null || user.RefreshToken != refreshToken || user.RefreshTokenExpiry < DateTime.UtcNow)
-                throw new UnauthorizedAccessException();
-
-            return user;
-        }
-
-        public async Task RevokeUserRefreshTokenAsync(string login, string refreshToken)
+        public async Task RevokeUserRefreshTokenAsync(string login)
         {
             var user = await _userManager.FindByEmailAsync(login)
                 ?? throw new UnauthorizedAccessException();
 
-            if (user.RefreshToken == refreshToken)
-            {
-                user.RefreshToken = null;
-                await _userManager.UpdateAsync(user);
-            }
-            else
-            {
-                throw new UnauthorizedAccessException();
-            }
-
+            user.RefreshToken = null;
+            await _userManager.UpdateAsync(user);
         }
 
-        private JwtSecurityToken GenerateAccessToken(string login)
+        private JwtSecurityToken GenerateAccessToken(string login, IList<string> roles)
         {
             var authClaims = new List<Claim>
             {
@@ -94,10 +62,13 @@ namespace Infrastructure.Identity.Services
                 new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
+            foreach (var role in roles)
+                authClaims.Add(new(ClaimTypes.Role, role));
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
                 _configuration["JWT:Secret"] ?? throw new InvalidOperationException("Secret not configured")));
 
-            var expiresTimeString = _configuration["JWT:Expire"];
+            var expiresTimeString = _configuration["JWT:AccessTokenExpireInMinutes"];
             int expiresTime;
 
             if (!int.TryParse(expiresTimeString, out expiresTime))
@@ -120,15 +91,14 @@ namespace Infrastructure.Identity.Services
             using var generator = RandomNumberGenerator.Create();
             generator.GetBytes(randomNumber);
 
-            var expiresTimeString = _configuration["JWT:TokenValidityInMinutes"];
+            var expiresTimeString = _configuration["JWT:RefreshTokenExpireInDays"];
             int expiresTime;
 
             if (!int.TryParse(expiresTimeString, out expiresTime))
                 throw new InvalidOperationException("Time must be number");
 
-
             user.RefreshToken = Convert.ToBase64String(randomNumber);
-            user.RefreshTokenExpiry = DateTime.UtcNow.AddMinutes(expiresTime);
+            user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(expiresTime);
         }
 
         public ClaimsPrincipal GetPrincipalFromExpiredToken(string token)
