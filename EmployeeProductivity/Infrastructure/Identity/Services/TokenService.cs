@@ -69,15 +69,14 @@ namespace Infrastructure.Identity.Services
                 _configuration["JWT:Secret"] ?? throw new InvalidOperationException("Secret not configured")));
 
             var expiresTimeString = _configuration["JWT:AccessTokenExpireInMinutes"];
-            int expiresTime;
 
-            if (!int.TryParse(expiresTimeString, out expiresTime))
+            if (!int.TryParse(expiresTimeString, out int expiresTime))
                 throw new InvalidOperationException("Time must be number");
 
             var token = new JwtSecurityToken(
                 issuer: _configuration["JWT:Issuer"],
                 audience: _configuration["JWT:Audience"],
-                expires: DateTime.UtcNow.AddMinutes(expiresTime),
+                expires: DateTime.UtcNow.AddSeconds(expiresTime),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
                 );
@@ -92,9 +91,8 @@ namespace Infrastructure.Identity.Services
             generator.GetBytes(randomNumber);
 
             var expiresTimeString = _configuration["JWT:RefreshTokenExpireInDays"];
-            int expiresTime;
 
-            if (!int.TryParse(expiresTimeString, out expiresTime))
+            if (!int.TryParse(expiresTimeString, out int expiresTime))
                 throw new InvalidOperationException("Time must be number");
 
             user.RefreshToken = Convert.ToBase64String(randomNumber);
@@ -110,10 +108,18 @@ namespace Infrastructure.Identity.Services
                 ValidIssuer = _configuration["JWT:Issuer"],
                 ValidAudience = _configuration["JWT:Audience"],
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret)),
-                ValidateLifetime = false
+                ValidateLifetime = true,
+                RequireExpirationTime = true
             };
-
-            return new JwtSecurityTokenHandler().ValidateToken(token, validation, out _);
+            try
+            {
+                var claims = new JwtSecurityTokenHandler().ValidateToken(token, validation, out _);
+                return claims;
+            }
+            catch
+            {
+                throw new UnauthorizedAccessException();
+            }
         }
     }
 }

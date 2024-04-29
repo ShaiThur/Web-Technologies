@@ -7,6 +7,7 @@ namespace Application.JobResults.Commands.CreateJobResult
     public record CreateJobResultCommand : IRequest<Guid>
     {
         public Guid JobId;
+
         public string? TextResult { get; set; }
     }
 
@@ -19,7 +20,6 @@ namespace Application.JobResults.Commands.CreateJobResult
         {
             var jobResult = new JobResult
             {
-                JobId = request.JobId,
                 Id = Guid.NewGuid(),
                 TextResult = request.TextResult
             };

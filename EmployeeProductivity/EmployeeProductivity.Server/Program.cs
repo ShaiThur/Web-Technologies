@@ -1,5 +1,3 @@
-using EmployeeProductivity.Server.Middleware;
-
 namespace EmployeeProductivity.Server
 {
     public class Program
@@ -7,10 +5,6 @@ namespace EmployeeProductivity.Server
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            //builder.Services.AddResponseCompression(options =>
-            //{
-            //    options.EnableForHttps = true;
-            //});
 
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
@@ -20,7 +14,6 @@ namespace EmployeeProductivity.Server
             builder.Services.AddEndpointsApiExplorer();
 
             var app = builder.Build();
-            //app.UseResponseCompression();
 
             //app.UseDefaultFiles();
             //app.UseStaticFiles();
@@ -32,7 +25,7 @@ namespace EmployeeProductivity.Server
             }
 
 
-
+            app.UseExceptionHandler(options => { });
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
@@ -41,10 +34,6 @@ namespace EmployeeProductivity.Server
             app.UseAuthorization();
 
             app.MapControllers();
-
-            //app.MapFallbackToFile("/index.html");
-
-            app.UseExceptionHandler(options => { });
 
             app.Run();
         }

@@ -7,5 +7,7 @@ namespace Application.Common.Interfaces.Identity
         Task<Result> CreateUserRoleAsync(string role);
 
         Task<Result> UpdateUserRoleAsync(string login, string role);
+
+        Task<Result> DeleteUserRoleAsync(string login, string role);
     }
 }

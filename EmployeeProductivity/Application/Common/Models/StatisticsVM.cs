@@ -5,7 +5,7 @@ using Domain.ValueObjects;
 
 namespace Application.Common.Models
 {
-    public class StatisticsVM : IMapWith<Statistics>
+    public class StatisticsVM : IMapWith<StatisticsOfEmployee>
     {
         public DeliveryTimeInfo? DeliveryTimeInfo { get; init; }
 
@@ -13,7 +13,7 @@ namespace Application.Common.Models
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Statistics, StatisticsVM>();
+            profile.CreateMap<StatisticsOfEmployee, StatisticsVM>();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace EmployeeProductivity.Server.Middleware
             {
                 context.Request.Cookies.TryGetValue("RefreshToken", out string? refreshToken);
 
-                var accessToken = context.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
+                var accessToken = context.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
 
                 if (refreshToken == null || accessToken == string.Empty)
                 {
@@ -53,7 +53,7 @@ namespace EmployeeProductivity.Server.Middleware
             await next(context);
         }
 
-        private async Task AddResponseToContextAsync(HttpContext context, int statusCode)
+        private static async Task AddResponseToContextAsync(HttpContext context, int statusCode)
         {
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             await context.Response.WriteAsJsonAsync(new ProblemDetails

@@ -5,6 +5,10 @@ namespace Application.Common.Interfaces.Identity
 {
     public interface IIdentityService
     {
+        Task<IUser> FindUserAsync(string login);
+
+        Task SaveChangesAsync(IUser user);
+
         Task<Result> CreateUserAsync(string email, string password);
 
         Task<bool> TryAuthorizeAsync(string login, string password);

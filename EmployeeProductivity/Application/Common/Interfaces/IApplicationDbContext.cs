@@ -5,11 +5,11 @@ namespace Application.Common.Interfaces
 {
     public interface IApplicationDbContext
     {
-        DbSet<Company> Companies { get; }
+        DbSet<Department> Departments { get; }
 
         DbSet<Job> Jobs { get; }
 
-        DbSet<Statistics> StatisticsOfEmployees { get; }
+        DbSet<StatisticsOfEmployee> StatisticsOfEmployees { get; }
 
         public DbSet<JobResult> JobResults { get; }
 

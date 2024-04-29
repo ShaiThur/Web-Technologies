@@ -16,5 +16,13 @@ namespace Domain.Entities
         public Complexity Complexity { get; set; }
 
         public bool IsFinished { get; set; }
+
+        public Guid CreatorId { get; set; }
+
+        public Guid? WorkerId { get; set; }
+
+        public JobResult? JobResult { get; set; }
+
+        public Department? Department { get; set; }
     }
 }

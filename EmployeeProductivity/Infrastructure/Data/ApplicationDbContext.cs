@@ -2,7 +2,6 @@
 using Domain.Entities;
 using Domain.Enums;
 using Infrastructure.Identity;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
@@ -16,11 +15,11 @@ namespace Infrastructure.Data
         {
         }
 
-        public DbSet<Company> Companies => Set<Company>();
+        public DbSet<Department> Departments => Set<Department>();
 
         public DbSet<Job> Jobs => Set<Job>();
 
-        public DbSet<Statistics> StatisticsOfEmployees => Set<Statistics>();
+        public DbSet<StatisticsOfEmployee> StatisticsOfEmployees => Set<StatisticsOfEmployee>();
 
         public DbSet<JobResult> JobResults => Set<JobResult>();
 

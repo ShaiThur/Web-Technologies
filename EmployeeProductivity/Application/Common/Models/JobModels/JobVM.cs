@@ -7,6 +7,8 @@ namespace Application.Common.Models.JobModels
 {
     public class JobVM : IMapWith<Job>
     {
+        public Guid Id { get; init; }
+
         public required string Title { get; init; }
 
         public string? MainInfo { get; init; }

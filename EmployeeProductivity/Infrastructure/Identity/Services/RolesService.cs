@@ -17,9 +17,10 @@ namespace Infrastructure.Identity.Services
             _userManager = userManager;
         }
 
-        public Task<Result> CreateUserRoleAsync(string role)
+        public async Task<Result> CreateUserRoleAsync(string role)
         {
-            throw new NotImplementedException();
+            var result = await _roleManager.CreateAsync(new(role));
+            return ResultExtensions.ToApplicationResult(result);
         }
 
         public async Task<Result> UpdateUserRoleAsync(string login, string role)
@@ -31,9 +32,20 @@ namespace Infrastructure.Identity.Services
             if (!isExist)
             {
                 throw new NullEntityException($"{nameof(Roles)} not found");
+                //await CreateUserRoleAsync(role);
             }
 
             var result = await _userManager.AddToRoleAsync(user, role);
+
+            return result.ToApplicationResult();
+        }
+
+        public async Task<Result> DeleteUserRoleAsync(string login, string role)
+        {
+            var user = await _userManager.FindByEmailAsync(login)
+               ?? throw new NullEntityException($"{nameof(ApplicationUser)} not found");
+
+            var result = await _userManager.RemoveFromRoleAsync(user, role);
 
             return result.ToApplicationResult();
         }

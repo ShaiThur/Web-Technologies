@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
+      "projectUniqueName": "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
+      "projectPath": "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-      "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\obj\\",
+      "outputPath": "D:\\cpp\\EmployeeProductivity\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

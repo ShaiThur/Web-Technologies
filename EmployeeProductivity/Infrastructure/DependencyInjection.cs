@@ -48,7 +48,10 @@ namespace Microsoft.Extensions.DependencyInjection
                     ValidIssuer = configuration["JWT:Issuer"],
                     ValidAudience = configuration["JWT:Audience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret)),
-                    ClockSkew = new TimeSpan(0, 0, 5)
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
                 };
             });
 
@@ -57,14 +60,13 @@ namespace Microsoft.Extensions.DependencyInjection
                 options.DefaultPolicy = new AuthorizationPolicyBuilder(JwtBearerDefaults.AuthenticationScheme)
                     .RequireAuthenticatedUser()
                     .Build();
+                options.AddPolicy(Polices.RequireAuthentication,
+                    p => p.RequireRole(Roles.Employee, Roles.Director, Roles.Administrator));
+                options.AddPolicy(Polices.RequireDirectorOrAdminRole,
+                    p => p.RequireRole(Roles.Director, Roles.Administrator));
+                options.AddPolicy(Polices.RequireAdmin,
+                    p => p.RequireRole(Roles.Administrator));
 
-                options.AddPolicy(Polices.CanSee, policy => policy.RequireRole(Roles.Administrator, Roles.Director, Roles.Employee));
-                options.AddPolicy(Polices.CanCreate, policy => policy.RequireRole(Roles.Administrator, Roles.Director));
-                options.AddPolicy(Polices.CanUpdate, policy => policy.RequireRole(Roles.Administrator, Roles.Director, Roles.Employee));
-                options.AddPolicy(Polices.CanDeleteJobResults, policy => policy.RequireRole(Roles.Administrator, Roles.Employee));
-                options.AddPolicy(Polices.CanDeleteJobResults, policy => policy.RequireRole(Roles.Administrator, Roles.Director));
-                options.AddPolicy(Polices.CanDeleteItself, policy => policy.RequireRole(Roles.Administrator, Roles.Director, Roles.Employee));
-                options.AddPolicy(Polices.CanRevokeTokens, policy => policy.RequireRole(Roles.Administrator, Roles.Director, Roles.Employee));
             });
 
             services

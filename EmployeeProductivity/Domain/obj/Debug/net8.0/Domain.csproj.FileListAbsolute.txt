@@ -21,3 +21,14 @@ D:\Web-Technologies\EmployeeProductivity\Domain\obj\Debug\net8.0\Domain.dll
 D:\Web-Technologies\EmployeeProductivity\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\Web-Technologies\EmployeeProductivity\Domain\obj\Debug\net8.0\Domain.pdb
 D:\Web-Technologies\EmployeeProductivity\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\cpp\EmployeeProductivity\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\cpp\EmployeeProductivity\Domain\bin\Debug\net8.0\Domain.dll
+D:\cpp\EmployeeProductivity\Domain\bin\Debug\net8.0\Domain.pdb
+D:\cpp\EmployeeProductivity\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\cpp\EmployeeProductivity\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\cpp\EmployeeProductivity\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\cpp\EmployeeProductivity\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\cpp\EmployeeProductivity\Domain\obj\Debug\net8.0\Domain.dll
+D:\cpp\EmployeeProductivity\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\cpp\EmployeeProductivity\Domain\obj\Debug\net8.0\Domain.pdb
+D:\cpp\EmployeeProductivity\Domain\obj\Debug\net8.0\ref\Domain.dll

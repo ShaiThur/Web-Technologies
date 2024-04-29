@@ -1,9 +1,13 @@
-﻿using Domain.ValueObjects;
+﻿using Domain.Entities;
 
 namespace Application.Common.Interfaces.Identity
 {
     public interface IUser
     {
-        string Id { get; }
+        public string Id { get; }
+
+        public string? UserName { get; }
+
+        public Department? Department { get; set; }
     }
 }

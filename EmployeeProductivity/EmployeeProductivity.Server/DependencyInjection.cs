@@ -17,7 +17,7 @@ namespace Microsoft.Extensions.DependencyInjection
                     policy.AllowAnyMethod();
                 });
             });
-
+            //services.AddScoped<User, CurrentUser>();
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo
@@ -47,7 +47,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                     Id = "Bearer"
                                 }
                             },
-                            new string[] {}
+                            Array.Empty<string>()
                     }
                 });
             });

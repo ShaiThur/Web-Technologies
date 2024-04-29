@@ -14,7 +14,8 @@ namespace EmployeeProductivity.Server.Middleware
             {
                 { typeof(MyValidationException), HandleValidationException },
                 { typeof(NullEntityException), HandleNullEntityException },
-                {typeof(UnauthorizedAccessException), HandleUnauthorizedAccessException }
+                { typeof(UnauthorizedAccessException), HandleUnauthorizedAccessException },
+                { typeof(InvalidOperationException), HandleInvalidOperationException }
             };
         }
 
@@ -60,6 +61,19 @@ namespace EmployeeProductivity.Server.Middleware
         private async Task HandleUnauthorizedAccessException(HttpContext context, Exception ex)
         {
             var exception = (UnauthorizedAccessException)ex;
+
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+
+            await context.Response.WriteAsJsonAsync(new ProblemDetails
+            {
+                Status = StatusCodes.Status401Unauthorized,
+                Title = exception.Message
+            });
+        }
+
+        private async Task HandleInvalidOperationException(HttpContext context, Exception ex)
+        {
+            var exception = (InvalidOperationException)ex;
 
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
 

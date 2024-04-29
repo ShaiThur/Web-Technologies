@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {}
+    "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj": {}
   },
   "projects": {
-    "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
+    "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
+        "projectPath": "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\obj\\",
+        "outputPath": "D:\\cpp\\EmployeeProductivity\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj"
+              "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj"
               }
             }
           }
@@ -59,7 +59,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.9.0, )"
+              "version": "[11.9.1, )"
             },
             "MediatR": {
               "target": "Package",
@@ -67,15 +67,27 @@
             },
             "Microsoft.AspNetCore.Authorization": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[8.0.3, )"
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             }
           },
           "imports": [
@@ -98,14 +110,14 @@
         }
       }
     },
-    "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
+    "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
+        "projectPath": "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\obj\\",
+        "outputPath": "D:\\cpp\\EmployeeProductivity\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

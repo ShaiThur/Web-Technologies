@@ -8,6 +8,7 @@ namespace Application.JobResults.Commands.UpdateJobResult
     public record UpdateJobResultCommand : IRequest
     {
         public Guid Id { get; set; }
+
         public string? TextResult { get; set; }
     }
 

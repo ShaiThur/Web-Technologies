@@ -21,9 +21,17 @@ namespace Application.JobResults.Queries
 
         public async Task<JobResultVM> Handle(GetJobResultQuery request, CancellationToken cancellationToken)
         {
+            var job = await _applicationDbContext.Jobs
+                .Where(j => j.Id == request.JobId)
+                .FirstOrDefaultAsync(cancellationToken: cancellationToken)
+                ?? throw new NullEntityException(nameof(Job));
+
+            if (job.JobResult == null)
+                throw new NullEntityException(nameof(JobResult));
+
             var result = await _applicationDbContext.JobResults
-                .Where(j => j.JobId == request.JobId)
-                .FirstOrDefaultAsync()
+                .Where(j => j.Id == job.JobResult.Id)
+                .FirstOrDefaultAsync(cancellationToken: cancellationToken)
                ?? throw new NullEntityException(nameof(JobResult));
 
             return _mapper.Map<JobResultVM>(result);
