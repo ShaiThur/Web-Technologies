@@ -1,17 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\cpp\\EmployeeProductivity\\",
+  "WorkspaceRootPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|d:\\cpp\\employeeproductivity\\application\\departments\\commands\\deletecommands\\deletedepartmentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|solutionrelative:application\\departments\\commands\\deletecommands\\deletedepartmentcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|d:\\cpp\\employeeproductivity\\application\\jobs\\commands\\deletecommands\\deletejobcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|d:\\cs\\web-technologies\\employeeproductivity\\application\\jobs\\commands\\deletecommands\\deletejobcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|solutionrelative:application\\jobs\\commands\\deletecommands\\deletejobcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\cpp\\employeeproductivity\\employeeproductivity.server\\controllers\\jobcontrollers\\jobresultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\cs\\web-technologies\\employeeproductivity\\employeeproductivity.server\\controllers\\jobcontrollers\\jobresultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\controllers\\jobcontrollers\\jobresultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,11 +26,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "DeleteJobCommand.cs",
-              "DocumentMoniker": "D:\\cpp\\EmployeeProductivity\\Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
+              "DocumentMoniker": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
               "RelativeDocumentMoniker": "Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
-              "ToolTip": "D:\\cpp\\EmployeeProductivity\\Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
+              "ToolTip": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
               "RelativeToolTip": "Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -43,24 +39,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DeleteDepartmentCommand.cs",
-              "DocumentMoniker": "D:\\cpp\\EmployeeProductivity\\Application\\Departments\\Commands\\DeleteCommands\\DeleteDepartmentCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Departments\\Commands\\DeleteCommands\\DeleteDepartmentCommand.cs",
-              "ToolTip": "D:\\cpp\\EmployeeProductivity\\Application\\Departments\\Commands\\DeleteCommands\\DeleteDepartmentCommand.cs",
-              "RelativeToolTip": "Application\\Departments\\Commands\\DeleteCommands\\DeleteDepartmentCommand.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAuwA0AAABSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T06:21:45.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "JobResultController.cs",
-              "DocumentMoniker": "D:\\cpp\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
+              "DocumentMoniker": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
               "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
-              "ToolTip": "D:\\cpp\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
+              "ToolTip": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
               "RelativeToolTip": "EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAswAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

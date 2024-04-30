@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\cpp\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj": {
+    "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj",
+        "projectPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\cpp\\EmployeeProductivity\\Application\\obj\\",
+        "outputPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj"
+              "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj"
               }
             }
           }
@@ -110,14 +110,14 @@
         }
       }
     },
-    "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj": {
+    "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\cpp\\EmployeeProductivity\\Domain\\Domain.csproj",
+        "projectPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\cpp\\EmployeeProductivity\\Domain\\obj\\",
+        "outputPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -174,14 +174,14 @@
         }
       }
     },
-    "D:\\cpp\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\cpp\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\cpp\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
-        "outputPath": "D:\\cpp\\EmployeeProductivity\\Infrastructure\\obj\\",
+        "outputPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -202,8 +202,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj": {
-                "projectPath": "D:\\cpp\\EmployeeProductivity\\Application\\Application.csproj"
+              "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
+                "projectPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj"
               }
             }
           }

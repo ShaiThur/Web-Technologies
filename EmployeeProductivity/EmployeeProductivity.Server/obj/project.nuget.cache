@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DC79F7B77/DGiSJIl5ugppaWmmksUNsswElbX0JZRzzEdJeGGA9VCbcchFixHgcsuuMmE8RXfudNqkYFnCyNQw==",
+  "dgSpecHash": "GVr9Z+fUY2EePyloHlhMhgBc8PX90xhxyCf2TTTHxXILG2vGVdV90dYptG//6ndY9efSQGBzhGma9vksRu5zdA==",
   "success": true,
-  "projectFilePath": "D:\\cpp\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj",
+  "projectFilePath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sartu\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\sartu\\.nuget\\packages\\fluentvalidation\\11.9.1\\fluentvalidation.11.9.1.nupkg.sha512",
