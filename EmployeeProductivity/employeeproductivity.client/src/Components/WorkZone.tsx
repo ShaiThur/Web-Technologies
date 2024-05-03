@@ -11,21 +11,42 @@ import Employees from "./Employees";
 import AllStatistic from "./AllStatistic";
 import ErrorPage from "./ErrorPage";
 import tasks from "./Tasks";
+import axios from 'axios';
 
 const WorkZone = () => {
     const [nameLabel, setNameLabel] = useState('Задачи');
     const [activeButton, setActiveButton] = useState('button1');
 
     const navigate = useNavigate();
-    const id = useParams();
-    const [name, typeOfUser] = id.id.split(";");
-
+    const typeOfUser = 'director';
 
     useEffect(() => {
-        if(name == undefined || typeOfUser == undefined && (typeOfUser != "employee" || typeOfUser != "director")){
-            navigate(`/error`);
-        }
+        GetUserInf();
     }, [])
+
+    const GetUserInf_GetRequest = async() =>{
+        console.log('GetUserInf_GetRequest')
+        const email = sessionStorage.getItem('userEmail');
+        const accessToken = localStorage.getItem('accessToken')
+        console.log('Token ', accessToken)
+        console.log('Email', email)
+
+        const response = await axios.request({
+            url: "http://localhost:5000/api/User/GetUserInformation",
+            method: 'get',
+            withCredentials: true,
+            headers: {
+                userLogin: email,
+                Authorization: `Bearer ${accessToken}`
+            }
+        })
+        console.log('Response is ',response)
+    }
+
+    const GetUserInf = () => {
+        console.log('GetUserInf')
+        GetUserInf_GetRequest();
+    }
 
     const ChangePage = (nameLabel : string, buttonName : string) => {
         setActiveButton(buttonName);
@@ -41,7 +62,7 @@ const WorkZone = () => {
             {typeOfUser == "director" ?  <div className="workzone">
                     <div className="header">
                         <div className="headerContents">
-                            <label htmlFor="">{name}</label>
+                            <label htmlFor="">{'ars'}</label>
                             <button className={'exitIcon'} onClick={() => Exit()}>
                                 <FontAwesomeIcon icon={faRightToBracket} />
                             </button>

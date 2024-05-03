@@ -1,6 +1,7 @@
 ﻿using Application.Common.Interfaces.Identity;
 using Domain.Constants;
 using EmployeeProductivity.Server.Models.UserModels;
+using Infrastructure.Identity.Services;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -43,11 +44,11 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
                 var options = new CookieOptions
                 {
                     Domain = Request.Host.ToString(),
-                    //HttpOnly = true
+                    HttpOnly = true
                 };
 
                 var cookieName = "RefreshToken";
-                Response.Cookies.Append(cookieName, tokens.Item2);
+                Response.Cookies.Append(cookieName, tokens.Item2, options);
 
                 return Ok(new { accessToken = tokens.Item1 });
             }
@@ -74,6 +75,15 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
         {
             await _tokenService.RevokeUserRefreshTokenAsync(login);
             await _identityService.SignOutAsync();
+            return Ok();
+        }
+
+        [Authorize(Policy = Polices.RequireAuthentication)]
+        [HttpGet]
+        public async Task<IActionResult> GetUserInformationAsync(string userLogin)
+        {
+            var user = await _identityService.FindUserAsync(userLogin);
+
             return Ok();
         }
 

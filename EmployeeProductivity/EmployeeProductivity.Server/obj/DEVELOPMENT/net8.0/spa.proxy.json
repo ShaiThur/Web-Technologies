@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "D:\\cpp\\EmployeeProductivity\\EmployeeProductivity.Server\\..\\employeeproductivity.client",
+"WorkingDirectory": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\..\\employeeproductivity.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

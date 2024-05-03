@@ -13,8 +13,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage/>
   },
   {
-    path: "/workzone/:id",
-    element: <WorkZone />
+    path: "/workzone",
+    element: <WorkZone />,
+    errorElement: <ErrorPage/>
   },
 ]);
 

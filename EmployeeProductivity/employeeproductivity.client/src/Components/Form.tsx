@@ -5,7 +5,7 @@ import SignUp from './SignUp';
 
 const Form = ( ) => {
     const [showSignUpForm, setShowSignUpForm] = useState(false);
-    const myHeight = showSignUpForm ? 820 : 550;
+    const myHeight = showSignUpForm ? 670 : 550;
     const myTop = showSignUpForm ? 140 : 210;
 
     return(

@@ -53,7 +53,8 @@ namespace Microsoft.Extensions.DependencyInjection
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.Zero
                 };
-            });
+            })
+            .AddCookie();
 
             services.AddAuthorization(options =>
             {

@@ -5,6 +5,7 @@ namespace Application.Common.Interfaces.Identity
 {
     public interface IIdentityService
     {
+
         Task<IUser> FindUserAsync(string login);
 
         Task SaveChangesAsync(IUser user);

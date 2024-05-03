@@ -10,3 +10,15 @@ D:\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.dl
 D:\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\refint\Domain.dll
 D:\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.pdb
 D:\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\ref\Domain.dll
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\bin\DEVELOPMENT\net8.0\Domain.deps.json
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\bin\DEVELOPMENT\net8.0\Domain.dll
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\bin\DEVELOPMENT\net8.0\Domain.pdb
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.AssemblyInfo.cs
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.sourcelink.json
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.dll
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\refint\Domain.dll
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\Domain.pdb
+C:\Users\Арсений\Desktop\4cем\WEB-разраб\Web-Technologies\EmployeeProductivity\Domain\obj\DEVELOPMENT\net8.0\ref\Domain.dll

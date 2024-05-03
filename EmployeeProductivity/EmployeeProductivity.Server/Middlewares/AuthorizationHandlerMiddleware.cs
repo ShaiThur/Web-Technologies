@@ -1,4 +1,5 @@
 ﻿using Application.Common.Interfaces.Identity;
+using Infrastructure.Identity.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Policy;
 using Microsoft.AspNetCore.Mvc;
@@ -8,10 +9,12 @@ namespace EmployeeProductivity.Server.Middleware
     public class AuthorizationHandlerMiddleware : IAuthorizationMiddlewareResultHandler
     {
         private readonly IIdentityService _identityService;
+        private readonly ITokenService _tokenService;
 
-        public AuthorizationHandlerMiddleware(IIdentityService identityService)
+        public AuthorizationHandlerMiddleware(IIdentityService identityService, ITokenService tokenService)
         {
             _identityService = identityService;
+            _tokenService = tokenService;
         }
 
         public async Task HandleAsync(RequestDelegate next,
@@ -25,11 +28,12 @@ namespace EmployeeProductivity.Server.Middleware
                 return;
             }
 
-            if (context.User.Identity != null && context.User.Identity.IsAuthenticated)
+            var accessToken = context.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
+            var claims = _tokenService.GetPrincipalFromExpiredToken(accessToken);
+
+            if (claims.Identity != null && claims.Identity.IsAuthenticated)
             {
                 context.Request.Cookies.TryGetValue("RefreshToken", out string? refreshToken);
-
-                var accessToken = context.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
 
                 if (refreshToken == null || accessToken == string.Empty)
                 {

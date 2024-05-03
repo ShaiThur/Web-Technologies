@@ -13,8 +13,8 @@ namespace Microsoft.Extensions.DependencyInjection
                 options.AddPolicy("AllowAll", policy =>
                 {
                     policy.AllowAnyHeader();
-                    policy.AllowAnyOrigin();
                     policy.AllowAnyMethod();
+                    policy.AllowCredentials();
                 });
             });
             //services.AddScoped<User, CurrentUser>();

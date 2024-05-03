@@ -35,7 +35,7 @@ namespace Infrastructure.Identity.Services
             var user = await _userManager.FindByEmailAsync(login)
                 ?? throw new UnauthorizedAccessException();
 
-            var result = await _signInManager.PasswordSignInAsync(user, password, false, false);
+            var result = await _signInManager.PasswordSignInAsync(user, password, true, false);
             return result.Succeeded;
         }
 
