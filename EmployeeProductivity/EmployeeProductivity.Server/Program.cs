@@ -1,3 +1,5 @@
+using Infrastructure.Data;
+
 namespace EmployeeProductivity.Server
 {
     public class Program
@@ -26,8 +28,9 @@ namespace EmployeeProductivity.Server
 
 
             app.UseExceptionHandler(options => { });
+
             app.UseRouting();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseCors("AllowAll");
 
             app.UseAuthentication();

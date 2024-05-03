@@ -10,7 +10,7 @@ namespace Application.Common.Interfaces.Identity
 
         Task SaveChangesAsync(IUser user);
 
-        Task<Result> CreateUserAsync(string email, string password);
+        Task<Result> CreateUserAsync(string firstName, string lastName, string email, string password);
 
         Task<bool> TryAuthorizeAsync(string login, string password);
 

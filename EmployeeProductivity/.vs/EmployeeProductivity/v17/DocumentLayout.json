@@ -1,14 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\",
+  "WorkspaceRootPath": "D:\\Web-Technologies\\EmployeeProductivity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|d:\\cs\\web-technologies\\employeeproductivity\\application\\jobs\\commands\\deletecommands\\deletejobcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C1C5E3F7-276D-4874-90B1-6AF437C6DEC7}|Application\\Application.csproj|solutionrelative:application\\jobs\\commands\\deletecommands\\deletejobcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\controllers\\usercontrollers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\controllers\\usercontrollers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\cs\\web-technologies\\employeeproductivity\\employeeproductivity.server\\controllers\\jobcontrollers\\jobresultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\controllers\\jobcontrollers\\jobresultcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\middlewares\\authorizationhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\middlewares\\authorizationhandlermiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|d:\\web-technologies\\employeeproductivity\\employeeproductivity.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B043BE41-B728-4FB4-88C0-05EA7B4ACCC4}|EmployeeProductivity.Server\\EmployeeProductivity.Server.csproj|solutionrelative:employeeproductivity.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +38,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DeleteJobCommand.cs",
-              "DocumentMoniker": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
-              "RelativeDocumentMoniker": "Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
-              "ToolTip": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
-              "RelativeToolTip": "Application\\Jobs\\Commands\\DeleteCommands\\DeleteJobCommand.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "EmployeeProductivity.Server\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACcAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-03T17:52:09.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\DependencyInjection.cs",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\DependencyInjection.cs",
+              "RelativeToolTip": "EmployeeProductivity.Server\\DependencyInjection.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T06:29:37.37Z",
+              "WhenOpened": "2024-05-03T16:24:07.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Program.cs",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Program.cs",
+              "RelativeToolTip": "EmployeeProductivity.Server\\Program.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAYwCAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T15:59:17.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "JobResultController.cs",
-              "DocumentMoniker": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
-              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
-              "ToolTip": "D:\\CS\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
-              "RelativeToolTip": "EmployeeProductivity.Server\\Controllers\\JobControllers\\JobResultController.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAswAIAAAAAAAAA",
+              "Title": "AuthorizationHandlerMiddleware.cs",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Middlewares\\AuthorizationHandlerMiddleware.cs",
+              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Middlewares\\AuthorizationHandlerMiddleware.cs",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Middlewares\\AuthorizationHandlerMiddleware.cs",
+              "RelativeToolTip": "EmployeeProductivity.Server\\Middlewares\\AuthorizationHandlerMiddleware.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAAwDgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-28T18:44:59.559Z"
+              "WhenOpened": "2024-05-03T15:55:41.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\UserControllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EmployeeProductivity.Server\\Controllers\\UserControllers\\UserController.cs",
+              "ToolTip": "D:\\Web-Technologies\\EmployeeProductivity\\EmployeeProductivity.Server\\Controllers\\UserControllers\\UserController.cs",
+              "RelativeToolTip": "EmployeeProductivity.Server\\Controllers\\UserControllers\\UserController.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAxwGMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T15:49:21.086Z",
+              "EditorCaption": ""
             }
           ]
         }

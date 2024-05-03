@@ -27,7 +27,7 @@ namespace EmployeeProductivity.Server.Controllers.DepartmentControllers
 
             await _sender.Send(new CreateDepartmentCommand
             {
-                UserName = userName.Name,
+                DirectorName = userName.Name,
                 DepartmentName = request.DepartmentName
             });
 

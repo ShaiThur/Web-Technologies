@@ -39,10 +39,12 @@ namespace Infrastructure.Identity.Services
             return result.Succeeded;
         }
 
-        public async Task<Result> CreateUserAsync(string email, string password)
+        public async Task<Result> CreateUserAsync(string firstName, string lastName, string email, string password)
         {
             var user = new ApplicationUser()
             {
+                FirstName = firstName,
+                LastName = lastName,
                 UserName = email,
                 Email = email,
                 PasswordHash = password,

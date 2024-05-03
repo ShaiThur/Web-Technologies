@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
+    "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Application\\obj\\",
+        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
+        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sartu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj"
+              "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj"
               }
             }
           }
@@ -38,6 +42,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -97,21 +106,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
+    "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Domain\\obj\\",
+        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
+        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sartu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -131,6 +144,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -152,21 +170,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Арсений\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\obj\\",
+        "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\sartu\\.nuget\\packages\\",
+        "outputPath": "D:\\Web-Technologies\\EmployeeProductivity\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Арсений\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sartu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -180,8 +202,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Арсений\\Desktop\\4cем\\WEB-разраб\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj"
+              "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj": {
+                "projectPath": "D:\\Web-Technologies\\EmployeeProductivity\\Application\\Application.csproj"
               }
             }
           }
@@ -190,6 +212,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -231,7 +258,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

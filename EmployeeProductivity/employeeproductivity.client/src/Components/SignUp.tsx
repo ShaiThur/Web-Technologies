@@ -31,7 +31,7 @@ const SignUp = ( {setShowSignUpForm} ) => {
 
     const RegisterNewUserPost = async () => {
         const response = await axios.request({
-            url: "http://localhost:5000/api/User/RegisterUser",
+            url: "api/User/RegisterUser",
             method: "post",
             headers: {
                 'Content-Type': 'application/json'

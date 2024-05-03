@@ -53,8 +53,7 @@ namespace Microsoft.Extensions.DependencyInjection
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.Zero
                 };
-            })
-            .AddCookie();
+            });
 
             services.AddAuthorization(options =>
             {
@@ -80,8 +79,10 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton(TimeProvider.System);
 
             services.AddScoped<IIdentityService, IdentityService>();
-            services.AddTransient<IRolesService, RolesService>();
-            services.AddTransient<ITokenService, TokenService>();
+            services.AddScoped<IRolesService, RolesService>();
+            services.AddScoped<ITokenService, TokenService>();
+
+            services.AddScoped<Seed>();
 
             return services;
         }

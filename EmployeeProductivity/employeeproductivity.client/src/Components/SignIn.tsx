@@ -25,7 +25,7 @@ const SignIn = ( {setShowSignUpForm} : {setShowSignUpForm: (show: boolean) => vo
 
     const Authorization = async() =>{
         const response = await axios.request({
-            url: "http://localhost:5000/api/User/AuthorizeUser",
+            url: "api/User/AuthorizeUser",
             method: "post",
             data: {
                 email: inputEmail.current.value,

@@ -1,5 +1,6 @@
 ﻿using EmployeeProductivity.Server.Middleware;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.OpenApi.Models;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -8,16 +9,17 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddServerServices(this IServiceCollection services)
         {
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll", policy =>
                 {
-                    policy.AllowAnyHeader();
-                    policy.AllowAnyMethod();
-                    policy.AllowCredentials();
+                    policy.WithOrigins("http://localhost:5173")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
                 });
             });
-            //services.AddScoped<User, CurrentUser>();
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo

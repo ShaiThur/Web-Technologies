@@ -18,11 +18,20 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
             _rolesService = rolesService;
         }
 
-        [Authorize(Policy = Polices.RequireAdmin)]
+        //[Authorize(Policy = Polices.RequireAdmin)]
         [HttpPut]
         public async Task AddRoleToUserAsync([FromBody] UserRolesRequest request)
         {
             await _rolesService.UpdateUserRoleAsync(request.Login, request.Role);
+        }
+
+        [Authorize(Policy = Polices.RequireAuthentication)]
+        [HttpGet]
+        public async Task<IActionResult> GetUserRoleAsync(string userLogin)
+        {
+            var roles = await _rolesService.GetUserRolesAsync(userLogin);
+
+            return Ok(roles);
         }
 
         [Authorize(Policy = Polices.RequireAdmin)]

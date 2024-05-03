@@ -7,7 +7,7 @@ namespace Application.Companies.Commands.CreateCommands
 {
     public record CreateDepartmentCommand : IRequest<Guid>
     {
-        public required string UserName { get; set; }
+        public required string DirectorName { get; set; }
 
         public required string DepartmentName { get; set; }
 
@@ -24,7 +24,7 @@ namespace Application.Companies.Commands.CreateCommands
 
         public async Task<Guid> Handle(CreateDepartmentCommand request, CancellationToken cancellationToken)
         {
-            var user = await _identityService.FindUserAsync(request.UserName);
+            var user = await _identityService.FindUserAsync(request.DirectorName);
             var department = new Department
             {
                 DepartmentName = request.DepartmentName,

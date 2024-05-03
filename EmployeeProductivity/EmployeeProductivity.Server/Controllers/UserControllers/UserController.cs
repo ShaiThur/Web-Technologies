@@ -1,9 +1,11 @@
 ﻿using Application.Common.Interfaces.Identity;
 using Domain.Constants;
 using EmployeeProductivity.Server.Models.UserModels;
-using Infrastructure.Identity.Services;
+using Infrastructure.Data;
+using Infrastructure.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeProductivity.Server.Controllers.UserControllers
@@ -13,19 +15,29 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
     {
         private readonly IIdentityService _identityService;
         private readonly ITokenService _tokenService;
+        private readonly Seed _seed;
 
         public UserController(ISender sender,
             IIdentityService service,
-            ITokenService tokenService) : base(sender)
+            ITokenService tokenService,
+            Seed seed) : base(sender)
         {
             _identityService = service;
             _tokenService = tokenService;
+            _seed = seed;
         }
+
+        [HttpGet]
+        public async Task TrySeedAsync()
+        {
+            await _seed.TrySeed();
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> RegisterUser([FromBody] CreateUserRequest request)
         {
-            var result = await _identityService.CreateUserAsync(request.Email, request.Password);
+            var result = await _identityService.CreateUserAsync(request.FirstName, request.LastName, request.Email, request.Password);
 
             if (result.Succeeded)
                 return Ok($"user {request.Email} was created");
@@ -43,8 +55,9 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
                 var tokens = await _tokenService.CreateTokensAsync(request.Email);
                 var options = new CookieOptions
                 {
-                    Domain = Request.Host.ToString(),
-                    HttpOnly = true
+                    HttpOnly = true,
+                    SameSite = SameSiteMode.Lax,
+                    Secure = false
                 };
 
                 var cookieName = "RefreshToken";
@@ -58,7 +71,7 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
 
         [Authorize(Policy = Polices.RequireAuthentication)]
         [HttpPost]
-        public async Task<IActionResult> RefreshUserTokenAsync(string login)
+        public async Task<IActionResult> RefreshUserTokenAsync([FromHeader] string login)
         {
             var newAccessToken = await _tokenService.RefreshUserTokenAsync(login);
             return Ok(new { accessToken = newAccessToken });
@@ -71,7 +84,7 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
 
         [Authorize(Policy = Polices.RequireAuthentication)]
         [HttpDelete]
-        public async Task<IActionResult> RevokeRefreshTokenAsync(string login)
+        public async Task<IActionResult> RevokeRefreshTokenAsync([FromHeader]  string login)
         {
             await _tokenService.RevokeUserRefreshTokenAsync(login);
             await _identityService.SignOutAsync();
@@ -80,11 +93,16 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
 
         [Authorize(Policy = Polices.RequireAuthentication)]
         [HttpGet]
-        public async Task<IActionResult> GetUserInformationAsync(string userLogin)
+        public async Task<IActionResult> GetUserInformationAsync([FromHeader] string userLogin)
         {
-            var user = await _identityService.FindUserAsync(userLogin);
+            var user = (ApplicationUser)await _identityService.FindUserAsync(userLogin);
 
-            return Ok();
+            return Ok(new
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email
+            });
         }
 
         [Authorize(Policy = Polices.RequireAuthentication)]

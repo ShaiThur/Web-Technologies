@@ -32,7 +32,7 @@ const WorkZone = () => {
         console.log('Email', email)
 
         const response = await axios.request({
-            url: "http://localhost:5000/api/User/GetUserInformation",
+            url: "api/User/GetUserInformation",
             method: 'get',
             withCredentials: true,
             headers: {

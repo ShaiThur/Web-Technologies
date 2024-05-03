@@ -19,7 +19,10 @@ namespace Infrastructure.Identity.Services
 
         public async Task<Result> CreateUserRoleAsync(string role)
         {
-            var result = await _roleManager.CreateAsync(new(role));
+            IdentityResult result = new();
+            if (!(await _roleManager.RoleExistsAsync(role)))
+                result = await _roleManager.CreateAsync(new(role));
+
             return ResultExtensions.ToApplicationResult(result);
         }
 
@@ -48,6 +51,17 @@ namespace Infrastructure.Identity.Services
             var result = await _userManager.RemoveFromRoleAsync(user, role);
 
             return result.ToApplicationResult();
+        }
+
+        public async Task<IList<string>> GetUserRolesAsync(string login)
+        {
+            var user = await _userManager.FindByEmailAsync(login)
+               ?? throw new NullEntityException($"{nameof(ApplicationUser)} not found");
+
+            var roles = await _userManager.GetRolesAsync(user)
+                ?? throw new NullEntityException(nameof(IdentityRole));
+
+            return roles;
         }
     }
 }
