@@ -4,6 +4,7 @@ namespace EmployeeProductivity.Server.Models.JobModels
 {
     public class CreateJobRequest
     {
+        public string? UserName { get; set; }
         public string? Title { get; set; }
 
         public string? MainInfo { get; set; }

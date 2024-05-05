@@ -27,7 +27,7 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
 
         [Authorize(Policy = Polices.RequireAuthentication)]
         [HttpGet]
-        public async Task<IActionResult> GetUserRoleAsync(string userLogin)
+        public async Task<IActionResult> GetUserRoleAsync([FromHeader] string userLogin)
         {
             var roles = await _rolesService.GetUserRolesAsync(userLogin);
 

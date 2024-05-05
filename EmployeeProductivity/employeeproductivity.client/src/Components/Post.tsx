@@ -8,7 +8,7 @@ import MyModalView from "./MyModalView";
 const Post = ({post, nameOfOption}) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const stars = []
-    for (let i = 0; i < post.countStars; i++)
+    for (let i = 0; i < post.difficulty; i++)
         stars.push([<FontAwesomeIcon icon={faStar} className="starIcon"/>])
 
     function showInformation(){
@@ -39,7 +39,7 @@ const Post = ({post, nameOfOption}) => {
                 <div className='postContent'>
                     <strong>{post.title}</strong>
                     <div>
-                        Срок сдачи: {post.deadLine}
+                        Срок сдачи: {post.date.split('T')[0]}
                     </div>
 
                 </div>

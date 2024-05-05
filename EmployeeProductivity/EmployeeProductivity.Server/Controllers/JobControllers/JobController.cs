@@ -23,7 +23,7 @@ namespace EmployeeProductivity.Server.Controllers.JobControllers
 
         [Authorize(Policy = Polices.RequireAuthentication)]
         [HttpGet]
-        public async Task<IEnumerable<JobVM>> GetAllJobsInDepartment(string departmentId)
+        public async Task<IEnumerable<JobVM>> GetAllJobsInDepartment([FromHeader] string departmentId)
             => await _sender.Send(new GetJobsQuery { DepartmentId = Guid.Parse(departmentId) });
 
         [Authorize(Policy = Polices.RequireAuthentication)]
@@ -40,16 +40,12 @@ namespace EmployeeProductivity.Server.Controllers.JobControllers
 
         [Authorize(Policy = Polices.RequireDirectorOrAdminRole)]
         [HttpPost]
-        public async Task<IActionResult> CreateJob([AsParameters] CreateJobRequest request)
+        public async Task<IActionResult> CreateJob([FromBody] CreateJobRequest request)
         {
-            var userName = Request.HttpContext.User.Identity;
-            if (userName == null)
-                return NotFound();
-
             await _sender.Send(new CreateJobCommand
             {
                 Title = request.Title,
-                UserName = userName.Name,
+                UserName = request.UserName,
                 Complexity = request.Complexity,
                 MainInfo = request.MainInfo,
                 Deadline = request.Deadline

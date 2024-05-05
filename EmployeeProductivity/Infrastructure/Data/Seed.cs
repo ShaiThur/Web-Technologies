@@ -46,7 +46,7 @@ namespace Infrastructure.Data
             await _sender.Send(new UpdateDepartmentStaffCommand { DirectorName = "dir@ect.or", NewEmployeeLogin = "emp2@loy.ee" });
             await _sender.Send(new UpdateDepartmentStaffCommand { DirectorName = "dir@ect.or", NewEmployeeLogin = "emp3@loy.ee" });
 
-
+            //Staff == drugs
         }
     }
 }

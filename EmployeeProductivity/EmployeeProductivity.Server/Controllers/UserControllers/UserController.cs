@@ -69,7 +69,6 @@ namespace EmployeeProductivity.Server.Controllers.UserControllers
             return NotFound();
         }
 
-        [Authorize(Policy = Polices.RequireAuthentication)]
         [HttpPost]
         public async Task<IActionResult> RefreshUserTokenAsync([FromHeader] string login)
         {

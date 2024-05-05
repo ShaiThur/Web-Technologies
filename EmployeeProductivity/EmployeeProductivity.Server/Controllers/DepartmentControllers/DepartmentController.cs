@@ -52,13 +52,9 @@ namespace EmployeeProductivity.Server.Controllers.DepartmentControllers
 
         [Authorize(Policy = Polices.RequireAuthentication)]
         [HttpGet]
-        public async Task<IActionResult> GetDepartment()
+        public async Task<IActionResult> GetDepartment([FromHeader] string userName)
         {
-            var userName = Request.HttpContext.User.Identity;
-            if (userName == null)
-                return NotFound();
-
-            var department =  await _sender.Send(new GetDepartmentQuery { UserName = userName.Name });
+            var department = await _sender.Send(new GetDepartmentQuery { UserName = userName });
             return Ok(department);
         }
 

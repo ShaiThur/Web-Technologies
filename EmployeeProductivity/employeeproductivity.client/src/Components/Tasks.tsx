@@ -1,16 +1,40 @@
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PostList from "./PostList";
 import Modal from 'react-modal';
 import MyModal from './MyModal';
+import axios from 'axios';
 
-const Tasks = (nameOfOption) => {
+const Tasks = () => {
     const [newPosts, setNewPosts] = useState([])
     const [modalIsOpen, setIsOpen] = useState(false);
-    const title = useRef(null)
-    const date = useRef(null)
-    const difficult = useRef(null)
+    const typeOfUser = sessionStorage.getItem('userRole');
+
+    useEffect(() => {
+        const getUsersTasks = async() => {
+            const departmentId = sessionStorage.getItem('userDepartment');
+            const accessToken = localStorage.getItem('accessToken')
+            const response = await axios.request({
+                url: "api/Job/GetAllJobsInDepartment",
+                method: 'get',
+                withCredentials: true,
+                headers: {
+                    departmentId: departmentId,
+                    Authorization: `Bearer ${accessToken}`,
+                },
+            });
+            const posts = response.data.map((item) => ({
+                id: item.id,
+                title: item.title,
+                date: item.deadline,
+                description: item.mainInfo,
+                difficulty: Number(item.complexity)+1
+            }));
+            setNewPosts([...posts]);
+        }
+        getUsersTasks();
+    }, [])
 
     const customStyles = {
         content: {
@@ -25,17 +49,17 @@ const Tasks = (nameOfOption) => {
 
     function openModal() {
         setIsOpen(true);
-      }
+    }
     
-      function closeModal() {
+    function closeModal() {
         setIsOpen(false);
-      }
+    }
 
     return (
         <>
-            <div className="plusTask" onClick={() => openModal()}>
+            {typeOfUser == 'Director' ? <div className="plusTask" onClick={() => openModal()}>
                 <FontAwesomeIcon icon={faPlus} />
-            </div>
+            </div> : ""}
             <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}

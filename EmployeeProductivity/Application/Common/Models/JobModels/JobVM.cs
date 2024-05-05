@@ -20,7 +20,9 @@ namespace Application.Common.Models.JobModels
         public void Mapping(Profile profile)
         {
             profile.CreateMap<Job, JobVM>().ForMember(d => d.Complexity,
-                opt => opt.MapFrom(s => (int)s.Complexity));
+                opt => opt.MapFrom(s => (int)s.Complexity)).ForMember(d => d.Deadline,
+                opt => opt.MapFrom(s => s.Deadline.ToString()));
+
         }
     }
 }
