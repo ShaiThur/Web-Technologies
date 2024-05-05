@@ -42,7 +42,7 @@
   display: -ms-flexbox;
   display: flex;
   background-color: white;
-  height: 220px;
+  height: 253px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -121,7 +121,7 @@
 }
 
 .workzone .body {
-  height: 85vh;
+  height: 100%;
   width: 85vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,6 +136,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: auto;
+  margin-top: -15px;
 }
 
 .workzone .body .post {
@@ -277,4 +279,40 @@ textarea {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+.workzone .body .postlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 83vw;
+  margin-left: 40px;
+  height: 65vh;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 30px;
+}
+
+.wrapper .wrapperItem {
+  border: 2px solid black;
+  width: 20px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#activePage {
+  border-color: blue;
 }

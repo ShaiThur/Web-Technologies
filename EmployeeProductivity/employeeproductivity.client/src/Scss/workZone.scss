@@ -42,7 +42,7 @@ $button_borderRad: 15px;
 .workzone .header{
     display: flex;
     background-color: white;
-    height: 220px;
+    height: 253px;
     flex-direction: column;
     width: 100%;
     margin-top: -70px;
@@ -104,12 +104,14 @@ $button_borderRad: 15px;
 
 
 .workzone .body{
-    height: 85vh;
+    height: 100%;
     width: 85vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow: auto;
+    margin-top: -15px;
 }
 
 .workzone .body .post{
@@ -204,4 +206,30 @@ textarea{
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+
+.workzone .body .postlist{
+    display: flex;
+    flex-direction: column;
+    width: 83vw;
+    margin-left: 40px;
+    height: 65vh;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.wrapper .wrapperItem{
+    border: 2px solid black;
+    width: 20px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#activePage{
+    border-color: blue;
 }

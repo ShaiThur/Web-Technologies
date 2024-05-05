@@ -28,7 +28,7 @@ var Post = function Post(_ref) {
     modalIsOpen = _useState2[0],
     setIsOpen = _useState2[1];
   var stars = [];
-  for (var i = 0; i < post.countStars; i++) stars.push([/*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
+  for (var i = 0; i < post.difficulty; i++) stars.push([/*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: _freeSolidSvgIcons.faStar,
     className: "starIcon"
   })]);
@@ -51,6 +51,9 @@ var Post = function Post(_ref) {
   function closeModal() {
     setIsOpen(false);
   }
+
+  // post.date.split('T')[0]
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "post",
     onClick: function onClick() {
@@ -58,7 +61,7 @@ var Post = function Post(_ref) {
     }
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "postContent"
-  }, /*#__PURE__*/_react.default.createElement("strong", null, post.title), /*#__PURE__*/_react.default.createElement("div", null, "\u0421\u0440\u043E\u043A \u0441\u0434\u0430\u0447\u0438: ", post.deadLine)), /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.default.createElement("strong", null, post.title), /*#__PURE__*/_react.default.createElement("div", null, "\u0421\u0440\u043E\u043A \u0441\u0434\u0430\u0447\u0438: ", post.date)), /*#__PURE__*/_react.default.createElement("div", {
     className: "postHelper"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "difficulty"
@@ -71,7 +74,7 @@ var Post = function Post(_ref) {
   }, /*#__PURE__*/_react.default.createElement(_MyModalView.default, {
     title: post.title,
     description: post.description,
-    date: post.deadLine
+    date: post.date
   })));
 };
 var _default = exports.default = Post;

@@ -86,7 +86,6 @@ const MyModal = ({posts, setNewPost}) => {
                 Authorization: `Bearer ${accessToken}`,
             }
         });
-        console.log(response);
     }
 
     return (

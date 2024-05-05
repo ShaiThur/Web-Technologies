@@ -33,13 +33,15 @@ const Post = ({post, nameOfOption}) => {
         setIsOpen(false);
     }
 
+    // post.date.split('T')[0]
+
     return (
         <>
             <div className='post' onClick={() => showInformation()}>
                 <div className='postContent'>
                     <strong>{post.title}</strong>
                     <div>
-                        Срок сдачи: {post.date.split('T')[0]}
+                        Срок сдачи: {post.date}
                     </div>
 
                 </div>
@@ -57,7 +59,7 @@ const Post = ({post, nameOfOption}) => {
                 contentLabel="Example Modal"
                 ariaHideApp={false}
             >
-                <MyModalView title={post.title} description={post.description} date={post.deadLine}/>
+                <MyModalView title={post.title} description={post.description} date={post.date}/>
             </Modal>
         </>
     );
