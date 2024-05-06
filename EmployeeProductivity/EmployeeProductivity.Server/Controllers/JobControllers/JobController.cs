@@ -65,6 +65,13 @@ namespace EmployeeProductivity.Server.Controllers.JobControllers
         }
 
         [Authorize(Policy = Polices.RequireAuthentication)]
+        [HttpGet]
+        public async Task<IList<JobVM>> GetJobsIntervalAsync([FromBody] GetJobsIntervalQuery request)
+        {
+            return await _sender.Send(request);
+        }
+
+        [Authorize(Policy = Polices.RequireAuthentication)]
         [HttpPatch]
         public async Task GetToWork([FromBody] UpdateJobWorkerRequest request)
         {
